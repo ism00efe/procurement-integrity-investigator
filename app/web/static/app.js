@@ -187,6 +187,16 @@ function renderInvestigationResult(data) {
     verifById[vf.finding.claim] = vf;
   }
 
+  const counts = { verified: 0, downgraded: 0, rejected: 0 };
+  for (const vf of data.verification || []) counts[vf.verification_status] = (counts[vf.verification_status] || 0) + 1;
+  const verificationSummaryHtml = (data.verification || []).length
+    ? `<p class="verification-summary">
+        <span class="verify-icon">✓</span>${counts.verified} verified
+        &nbsp;&middot;&nbsp; <span class="verify-icon">⚠</span>${counts.downgraded} downgraded
+        &nbsp;&middot;&nbsp; <span class="verify-icon">✗</span>${counts.rejected} rejected by verification
+      </p>`
+    : "";
+
   const investigatorHtml = (data.investigator_outputs || [])
     .map((out) => {
       const findings = (out.findings || [])
@@ -227,7 +237,7 @@ function renderInvestigationResult(data) {
     </div>
   `;
 
-  resultEl.innerHTML = `<div class="section">${investigatorHtml}</div>${reportHtml}`;
+  resultEl.innerHTML = `<div class="section">${verificationSummaryHtml}${investigatorHtml}</div>${reportHtml}`;
 }
 
 loadSummary();

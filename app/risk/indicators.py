@@ -87,6 +87,15 @@ def short_tender_period(cases: pd.DataFrame) -> IndicatorTable:
 
 
 def price_deviation(case_awards: pd.DataFrame) -> IndicatorTable:
+    """NOTE on this dataset: in 99.94% of records, award value is exactly
+    equal to the tender's own estimated value (the source system appears to
+    populate both from the same underlying figure rather than recording an
+    independent pre-bid estimate). A deviation here is therefore rare and,
+    when it occurs, is at least as likely to reflect a data-entry error
+    (e.g. a stray extra digit) as a genuine cost overrun — either way, a
+    large discrepancy in the public record is worth a human look, so this
+    indicator is kept but its explanation says so explicitly rather than
+    implying a confident economic reading."""
     out = []
     df = case_awards.dropna(subset=["tender_value_amount", "award_value_amount", "award_id"])
     df = df[df["tender_value_amount"] > 0]
@@ -101,8 +110,10 @@ def price_deviation(case_awards: pd.DataFrame) -> IndicatorTable:
             indicator_id="PRICE_DEVIATION",
             score=round(score, 1),
             explanation=(
-                f"Awarded value is {abs(pct):.0f}% {direction} the tender's own estimated "
-                "value."
+                f"Awarded value is {abs(pct):.0f}% {direction} the tender's own recorded "
+                "estimate. In this dataset these two figures are almost always identical, "
+                "so a gap this large is unusual and worth checking against the source "
+                "record — either a genuine cost/estimate anomaly or a data-entry error."
             ),
             evidence_refs=[f"case:{row['case_id']}", f"award:{row['case_id']}:{row['award_id']}"],
         ))
@@ -205,13 +216,16 @@ def peer_price_outlier(cases: pd.DataFrame) -> IndicatorTable:
         outliers = group[robust_z.abs() >= 4.0]
         for _, row in outliers.iterrows():
             ratio = row["tender_value_amount"] / median
+            # Below 1.0, "0.1x" rounds to a meaningless "0.0x" for large gaps;
+            # express those as a percentage of the peer median instead.
+            ratio_text = f"{ratio:.1f}x" if ratio >= 0.1 else f"only {ratio * 100:.1f}% of"
             out.append(IndicatorResult(
                 case_id=row["case_id"],
                 indicator_id="PEER_PRICE_OUTLIER",
                 score=round(min(15.0, 6 + abs(ratio - 1) * 3), 1),
                 explanation=(
-                    f"Estimated value is {ratio:.1f}x the median for {len(group)} tenders "
-                    f'with similar item descriptions ("{key}")..'
+                    f"Estimated value is {ratio_text} the median for {len(group)} tenders "
+                    f'with similar item descriptions ("{key}").'
                 ),
                 evidence_refs=[f"case:{row['case_id']}"],
             ))

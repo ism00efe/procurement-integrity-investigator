@@ -55,6 +55,69 @@ def test_claim_with_no_evidence_refs_is_downgraded(temp_database):
     assert result.verification_status == "downgraded"
 
 
+def test_price_deviation_percentage_verified_when_matching(temp_database):
+    # case-1: tender 1,000,000 vs award a1 1,500,000 -> true deviation is +50%.
+    finding = Finding(
+        claim="Awarded value is 50% above the tender's own estimated value.",
+        evidence_refs=["case:case-1", "award:case-1:a1"],
+        confidence=0.8, risk_level="high",
+    )
+    result = verify_finding(finding, "price")
+    assert result.verification_status == "verified"
+
+
+def test_price_deviation_percentage_rejected_when_fabricated(temp_database):
+    # Regression test: this claim shape ("X% above the tender's own estimated
+    # value") previously slipped past every numeric check (the multiplier
+    # check only recognizes "Nx" phrasing, and the percentage check requires
+    # buyer+supplier refs this claim doesn't have) and fell through to the
+    # weak evidence-existence-only "verified" fallback.
+    finding = Finding(
+        claim="Awarded value is 9900% above the tender's own estimated value.",
+        evidence_refs=["case:case-1", "award:case-1:a1"],
+        confidence=0.85, risk_level="high",
+    )
+    result = verify_finding(finding, "price")
+    assert result.verification_status == "rejected"
+    assert "recalculated" in result.verification_notes.lower()
+
+
+def test_bare_contract_count_verified_when_matching(temp_database):
+    # buyer-A/supplier-X share exactly 1 identified contract (case-1/a1).
+    finding = Finding(
+        claim="The supplier has been awarded 1 contract from the same buyer.",
+        evidence_refs=["buyer:buyer-A", "supplier:supplier-X"],
+        confidence=0.7, risk_level="medium",
+    )
+    result = verify_finding(finding, "supplier")
+    assert result.verification_status == "verified"
+
+
+def test_bare_contract_count_rejected_when_fabricated(temp_database):
+    finding = Finding(
+        claim="The supplier has been awarded 12 contracts from the same buyer.",
+        evidence_refs=["buyer:buyer-A", "supplier:supplier-X"],
+        confidence=0.7, risk_level="high",
+    )
+    result = verify_finding(finding, "supplier")
+    assert result.verification_status == "rejected"
+
+
+def test_n_of_m_phrasing_is_not_reinterpreted_by_bare_count_check(temp_database):
+    # The trailing "10 contracts" must not be picked up by the bare-count
+    # check once _check_count_of_total has already matched "8 of ... 10".
+    finding = Finding(
+        claim="This supplier won 8 of the buyer's last 10 contracts.",
+        evidence_refs=["buyer:buyer-A", "supplier:supplier-X"],
+        confidence=0.9, risk_level="high",
+    )
+    result = verify_finding(finding, "supplier")
+    # Still rejected (actual is 1 of 3), but for the count-of-total reason,
+    # not a conflicting/duplicate bare-count reason.
+    assert result.verification_status == "rejected"
+    assert "of" in result.verification_notes.lower()
+
+
 def test_qualitative_claim_with_valid_evidence_is_verified(temp_database):
     finding = Finding(
         claim="Only one tenderer participated in this process.",

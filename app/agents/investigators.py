@@ -29,6 +29,18 @@ Hard rules:
   relationships).
 - Use the provided tools to gather facts before writing findings — do not guess numbers.
   Call at least one tool relevant to your role before producing your final answer.
+- Stay in your lane. Two other specialists are covering procedure, supplier history, and
+  price separately. Do not file a standalone finding that just restates a fact belonging to
+  another specialty (e.g. bidder count, procurement method, tender-period length) unless you
+  are directly connecting it to your own specialty's evidence to explain a specific
+  conclusion (e.g. "peer comparison confidence is low because only one bidder means less
+  price discovery happened"). If your area of focus has nothing further to add for this
+  case, return fewer findings rather than padding with another specialty's facts.
+- Never state that a value "may be high" or "may be low" (or similarly vague/hedged
+  comparative language) without citing a specific number from a tool result to support it.
+  If a tool reports that comparison data is insufficient, say exactly that as your finding
+  (e.g. "insufficient comparable data to assess whether this value is unusual") instead of
+  speculating.
 - When you are done gathering evidence, respond with ONLY a single JSON object (no prose,
   no markdown fences) matching exactly this shape:
   {"investigator": "<your role id>", "case_id": "<case id>", "summary": "<1-3 sentences>",
@@ -54,7 +66,9 @@ INVESTIGATOR_SPECS = [
             "Determine the winning supplier's history: how concentrated its awards are, "
             "whether it repeatedly wins from the same buyer, and whether that pattern is "
             "unusual relative to the buyer's overall supplier base. Use get_supplier_history, "
-            "get_buyer_history, and get_related_contracts."
+            "get_buyer_history, and get_related_contracts. Bidder count, procurement method, "
+            "and tender-period length are the Procedure analyst's territory, not yours — do "
+            "not file a finding about them."
         ),
     },
     {
@@ -64,7 +78,9 @@ INVESTIGATOR_SPECS = [
             "Determine whether the tender's estimated or awarded value looks unusual compared "
             "to similar tenders, and whether the awarded value deviates materially from the "
             "tender's own estimate. Use get_peer_price_comparison and get_tender_details, and "
-            "consider legitimate reasons values can differ (scope, urgency, specification)."
+            "consider legitimate reasons values can differ (scope, urgency, specification). "
+            "Bidder count, procurement method, and tender-period length are the Procedure "
+            "analyst's territory, not yours — do not file a finding about them, even briefly."
         ),
     },
 ]
@@ -103,6 +119,12 @@ def _parse_output(raw: str, investigator_id: str, case_id: str) -> InvestigatorO
         if text.lower().startswith("json"):
             text = text[4:]
     data = json.loads(text)
+    # The model is inconsistent about what it puts in "investigator"/"case_id"
+    # (sometimes the descriptive role name, sometimes a slug, occasionally a
+    # typo'd case id) -- these are already known from context, so don't trust
+    # the model's self-report for fields we can set authoritatively.
+    data["investigator"] = investigator_id
+    data["case_id"] = case_id
     return InvestigatorOutput.model_validate(data)
 
 
@@ -123,12 +145,12 @@ async def run_investigator(
         except LLMProviderError as exc:
             logger.warning("Investigator %s failed for %s: %s", spec["id"], case_id, exc)
             return InvestigatorOutput(
-                investigator=spec["id"], case_id=case_id,
+                investigator=spec["role"], case_id=case_id,
                 summary=f"Investigation call failed: {exc}", findings=[],
             )
 
     try:
-        return _parse_output(raw, spec["id"], case_id)
+        return _parse_output(raw, spec["role"], case_id)
     except (json.JSONDecodeError, ValidationError) as exc:
         logger.warning("Repairing malformed output from %s for %s: %s", spec["id"], case_id, exc)
 
@@ -144,11 +166,11 @@ async def run_investigator(
     try:
         async with semaphore:
             repaired = await provider.chat(messages, tools=None)
-        return _parse_output(repaired.get("content") or "", spec["id"], case_id)
+        return _parse_output(repaired.get("content") or "", spec["role"], case_id)
     except (LLMProviderError, json.JSONDecodeError, ValidationError) as exc:
         logger.warning("Repair failed for %s on %s: %s", spec["id"], case_id, exc)
         return InvestigatorOutput(
-            investigator=spec["id"], case_id=case_id,
+            investigator=spec["role"], case_id=case_id,
             summary="Investigator output could not be parsed as valid structured JSON after retry.",
             findings=[],
         )

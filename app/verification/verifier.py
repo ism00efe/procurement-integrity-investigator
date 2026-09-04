@@ -27,10 +27,23 @@ from app.data.db import get_connection
 PCT_TOLERANCE = 8.0
 RATIO_TOLERANCE = 0.35
 COUNT_TOLERANCE = 0
+PRICE_PCT_TOLERANCE = 15.0
 
 
 def _ref_ids(refs: list[str], scheme: str) -> list[str]:
     return [r.split(":", 1)[1] for r in refs if r.startswith(scheme + ":")]
+
+
+def _award_refs(refs: list[str]) -> list[tuple[str, str]]:
+    """Parses 'award:{case_id}:{award_id}' refs into (case_id, award_id) pairs."""
+    out = []
+    for r in refs:
+        if not r.startswith("award:"):
+            continue
+        case_id, sep, award_id = r[len("award:"):].partition(":")
+        if sep:
+            out.append((case_id, award_id))
+    return out
 
 
 def _recompute_supplier_share_pct(buyer_id: str, supplier_id: str) -> float | None:
@@ -90,6 +103,29 @@ def _check_count_of_total(claim: str, buyer_ids: list[str], supplier_ids: list[s
     return _Check("verified", f"Recalculated count matches claim: {actual_n} of {actual_m}.")
 
 
+def _check_bare_contract_count(claim: str, buyer_ids: list[str], supplier_ids: list[str]) -> _Check | None:
+    """Catches plain count claims like 'awarded 12 contracts' that don't use
+    the 'N of M' phrasing _check_count_of_total looks for. Callers must only
+    invoke this when _check_count_of_total already found no match, so a claim
+    like '8 of the buyer's last 10 contracts' isn't double-interpreted (this
+    regex alone would misread the trailing '10 contracts' as the claim)."""
+    m = re.search(r"(\d+)\s+(?:separate\s+|identified\s+)?contracts?\b", claim, re.IGNORECASE)
+    if not (m and buyer_ids and supplier_ids):
+        return None
+    claimed = int(m.group(1))
+    related = get_related_contracts(buyer_ids[0], supplier_ids[0])
+    actual = related.get("contract_count")
+    if actual is None:
+        return _Check("downgraded", "Could not independently recompute the cited contract count.")
+    if actual != claimed:
+        return _Check(
+            "rejected",
+            f"Claimed {claimed} contract(s); recalculated {actual} identified contract(s) "
+            "between this buyer and supplier.",
+        )
+    return _Check("verified", f"Recalculated contract count ({actual}) matches claim.")
+
+
 def _check_percentage(claim: str, buyer_ids: list[str], supplier_ids: list[str]) -> _Check | None:
     m = re.search(r"(\d+(?:\.\d+)?)\s*%", claim)
     if not (m and buyer_ids and supplier_ids):
@@ -105,6 +141,54 @@ def _check_percentage(claim: str, buyer_ids: list[str], supplier_ids: list[str])
             f"{actual_pct:.0f}% of buyer's total award value.",
         )
     return _Check("verified", f"Recalculated share ({actual_pct:.0f}%) matches claimed {claimed_pct:.0f}%.")
+
+
+def _recompute_price_deviation_pct(case_id: str, award_id: str | None) -> float | None:
+    con = get_connection(read_only=True)
+    if award_id:
+        row = con.execute(
+            "SELECT tender_value_amount, award_value_amount FROM case_awards "
+            "WHERE case_id = ? AND award_id = ?", [case_id, award_id],
+        ).fetchone()
+    else:
+        row = con.execute(
+            "SELECT tender_value_amount, award_value_amount FROM case_awards "
+            "WHERE case_id = ? AND award_value_amount IS NOT NULL LIMIT 1", [case_id],
+        ).fetchone()
+    con.close()
+    if not row or not row[0] or row[1] is None:
+        return None
+    return (row[1] / row[0] - 1) * 100
+
+
+def _check_price_deviation_percentage(
+    claim: str, case_ids: list[str], award_refs: list[tuple[str, str]],
+) -> _Check | None:
+    """Catches claims like '9900% above the tender's own estimated value' —
+    distinct from _check_percentage (buyer/supplier value-share claims),
+    which requires buyer+supplier refs this claim shape won't have."""
+    m = re.search(r"(\d+(?:\.\d+)?)\s*%\s*(above|below|higher|lower|over|under)", claim, re.IGNORECASE)
+    if not (m and case_ids):
+        return None
+    claimed_pct = float(m.group(1))
+    if m.group(2).lower() in ("below", "lower", "under"):
+        claimed_pct = -claimed_pct
+    case_id = case_ids[0]
+    award_id = next((a for c, a in award_refs if c == case_id), None)
+    actual_pct = _recompute_price_deviation_pct(case_id, award_id)
+    if actual_pct is None:
+        return _Check("downgraded", "Could not independently recompute the cited price deviation percentage.")
+    tolerance = max(PRICE_PCT_TOLERANCE, 0.15 * abs(claimed_pct))
+    if abs(actual_pct - claimed_pct) > tolerance:
+        return _Check(
+            "rejected",
+            f"Claimed {claimed_pct:.0f}% deviation from the tender estimate; recalculated "
+            f"award/tender deviation is {actual_pct:.0f}%.",
+        )
+    return _Check(
+        "verified",
+        f"Recalculated award/tender deviation ({actual_pct:.0f}%) matches claimed {claimed_pct:.0f}%.",
+    )
 
 
 def _check_multiplier(claim: str, case_ids: list[str]) -> _Check | None:
@@ -151,10 +235,17 @@ def verify_finding(finding: Finding, investigator: str) -> VerifiedFinding:
     buyer_ids = _ref_ids(refs, "buyer")
     supplier_ids = _ref_ids(refs, "supplier")
     case_ids = _ref_ids(refs, "case")
+    award_refs = _award_refs(refs)
 
+    count_of_total_check = _check_count_of_total(finding.claim, buyer_ids, supplier_ids)
     checks = [
-        _check_count_of_total(finding.claim, buyer_ids, supplier_ids),
+        count_of_total_check,
+        # Only tried if the "N of M" phrasing didn't match, so a claim like
+        # "8 of the buyer's last 10 contracts" isn't reinterpreted using just
+        # the trailing "10 contracts" fragment.
+        _check_bare_contract_count(finding.claim, buyer_ids, supplier_ids) if count_of_total_check is None else None,
         _check_percentage(finding.claim, buyer_ids, supplier_ids),
+        _check_price_deviation_percentage(finding.claim, case_ids, award_refs),
         _check_multiplier(finding.claim, case_ids),
         _check_tenderer_count(finding.claim, case_ids),
     ]
