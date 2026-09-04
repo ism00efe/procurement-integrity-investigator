@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Procurement Integrity Investigator</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">PII</span>
+      <div>
+        <h1>Procurement Integrity Investigator</h1>
+        <p class="subtitle">Nigeria public procurement &middot; deterministic risk analysis + verified AI investigation</p>
+      </div>
+    </div>
+    <div id="llm-badge" class="llm-badge">checking LLM status…</div>
+  </header>
+
+  <main>
+    <section class="stats" id="stats">
+      <div class="stat-card"><div class="stat-value" id="stat-total">–</div><div class="stat-label">Procurements analyzed</div></div>
+      <div class="stat-card"><div class="stat-value" id="stat-risky">–</div><div class="stat-label">Risky procurements detected</div></div>
+      <div class="stat-card stat-high"><div class="stat-value" id="stat-high">–</div><div class="stat-label">High-risk cases</div></div>
+      <div class="stat-card"><div class="stat-value" id="stat-medium">–</div><div class="stat-label">Medium-risk cases</div></div>
+      <div class="stat-card"><div class="stat-value" id="stat-buyers">–</div><div class="stat-label">Buyers</div></div>
+      <div class="stat-card"><div class="stat-value" id="stat-suppliers">–</div><div class="stat-label">Suppliers</div></div>
+    </section>
+
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Search buyer or tender title…" />
+      <select id="risk-filter">
+        <option value="">All risk levels</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <span class="hint">Click a row to open the case investigation view.</span>
+    </section>
+
+    <section class="case-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Risk</th><th>Buyer</th><th>Tender</th><th>Value (NGN)</th><th>Method</th><th>Main indicators</th>
+          </tr>
+        </thead>
+        <tbody id="case-rows"></tbody>
+      </table>
+      <div class="pager">
+        <button id="prev-page">&larr; Prev</button>
+        <span id="page-info"></span>
+        <button id="next-page">Next &rarr;</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="drawer">
+      <button id="close-drawer" class="close-btn">&times;</button>
+      <div id="drawer-content"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

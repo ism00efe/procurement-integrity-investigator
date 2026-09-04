@@ -1,0 +1,173 @@
+:root {
+  --navy: #0f2540;
+  --teal: #0d7c72;
+  --teal-light: #e6f4f2;
+  --high: #c23b3b;
+  --high-bg: #fceaea;
+  --medium: #b8790f;
+  --medium-bg: #fdf3e2;
+  --low: #3a7d3a;
+  --low-bg: #eaf5ea;
+  --border: #dfe4ea;
+  --bg: #f6f8fa;
+  --text: #1c2733;
+  --muted: #5b6b7a;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--navy);
+  color: white;
+  padding: 18px 28px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-mark {
+  background: var(--teal);
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+}
+.topbar h1 { font-size: 20px; margin: 0; }
+.subtitle { margin: 2px 0 0; font-size: 13px; color: #c9d6e3; }
+.llm-badge {
+  font-size: 12px;
+  background: rgba(255,255,255,0.12);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.llm-badge.on { background: #1f6f4a; }
+.llm-badge.off { background: #6f3a1f; }
+
+main { max-width: 1180px; margin: 0 auto; padding: 24px 28px 60px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.stat-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+}
+.stat-value { font-size: 24px; font-weight: 700; color: var(--navy); }
+.stat-high .stat-value { color: var(--high); }
+.stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+.toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.toolbar input, .toolbar select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+.toolbar input { flex: 1; max-width: 340px; }
+.hint { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+.case-list { background: white; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th {
+  text-align: left;
+  background: #fafbfc;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+tbody td { padding: 10px 14px; border-bottom: 1px solid #eef1f4; vertical-align: top; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--teal-light); }
+
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-weight: 700; font-size: 12px; }
+.badge.high { background: var(--high-bg); color: var(--high); }
+.badge.medium { background: var(--medium-bg); color: var(--medium); }
+.badge.low { background: var(--low-bg); color: var(--low); }
+
+.indicator-chip {
+  display: inline-block;
+  font-size: 11px;
+  background: #eef1f4;
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin: 2px 4px 2px 0;
+  color: var(--navy);
+}
+
+.pager { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 12px; font-size: 13px; }
+.pager button { border: 1px solid var(--border); background: white; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.pager button:disabled { opacity: 0.4; cursor: default; }
+
+.overlay {
+  position: fixed; inset: 0; background: rgba(15,37,64,0.45);
+  display: flex; justify-content: flex-end; z-index: 50;
+}
+.overlay.hidden { display: none; }
+.drawer {
+  width: min(760px, 100%);
+  background: var(--bg);
+  height: 100%;
+  overflow-y: auto;
+  padding: 28px 48px 80px 32px;
+  position: relative;
+  box-sizing: border-box;
+}
+.close-btn {
+  position: absolute; top: 18px; right: 20px;
+  border: none; background: none; font-size: 28px; cursor: pointer; color: var(--muted);
+}
+
+.case-header { display: flex; align-items: center; gap: 16px; margin-bottom: 4px; }
+.score-badge {
+  font-size: 28px; font-weight: 800; padding: 8px 18px; border-radius: 12px;
+}
+.score-badge.high { background: var(--high-bg); color: var(--high); }
+.score-badge.medium { background: var(--medium-bg); color: var(--medium); }
+.score-badge.low { background: var(--low-bg); color: var(--low); }
+.case-title { font-size: 18px; font-weight: 700; margin: 0; }
+.case-sub { color: var(--muted); font-size: 13px; }
+
+.section { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-top: 18px; }
+.section h3 { margin: 0 0 12px; font-size: 15px; color: var(--navy); }
+.indicator-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid #f0f2f5; }
+.indicator-row:last-child { border-bottom: none; }
+.indicator-score { font-weight: 700; color: var(--navy); white-space: nowrap; }
+
+.investigator-card { border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; }
+.investigator-card h4 { margin: 0 0 6px; font-size: 13px; color: var(--teal); text-transform: uppercase; letter-spacing: 0.03em; }
+.finding { border-left: 3px solid var(--border); padding: 8px 0 8px 12px; margin: 8px 0; }
+.finding.verified { border-color: var(--low); }
+.finding.downgraded { border-color: var(--medium); }
+.finding.rejected { border-color: var(--high); opacity: 0.75; }
+.finding-claim { font-size: 13px; font-weight: 600; }
+.finding-meta { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.finding-benign { font-size: 12px; color: var(--muted); margin-top: 4px; font-style: italic; }
+.verify-icon { margin-right: 6px; }
+
+.narrative { font-size: 14px; line-height: 1.5; }
+.kv-row { display: flex; gap: 10px; font-size: 13px; margin: 6px 0; }
+.kv-row .k { font-weight: 700; min-width: 160px; color: var(--navy); }
+
+.run-btn {
+  background: var(--teal); color: white; border: none; border-radius: 8px;
+  padding: 10px 18px; font-size: 14px; cursor: pointer; font-weight: 600;
+}
+.run-btn:disabled { opacity: 0.6; cursor: default; }
+.muted { color: var(--muted); font-size: 13px; }
+.error-box { background: var(--high-bg); color: var(--high); padding: 10px 14px; border-radius: 8px; font-size: 13px; }
