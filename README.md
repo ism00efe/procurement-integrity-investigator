@@ -114,11 +114,34 @@ whitelisted, parameterized functions (`get_tender_details`,
 **Verification** (`app/verification/verifier.py`): for every LLM finding, we
 confirm cited evidence exists and re-derive any recognizable numeric
 assertion (counts, percentages, price ratios, tenderer counts) directly from
-DuckDB. A finding is `rejected` if the recalculated number materially
-disagrees, `downgraded` if it can't be independently checked, and `verified`
-otherwise. The final report only draws on verified/downgraded findings;
-rejected ones are kept and surfaced in the dashboard as
-"✗ claim rejected by verification," not silently dropped.
+DuckDB.
+
+`verified` is deliberately a narrow status: it means the recomputation
+actually ran and the number matched. Confirming that a claim's citations
+point at real records is a necessary check but not verification of the claim
+itself — a model can cite a genuine record and still describe it wrongly — so
+a well-cited claim with no recomputable number lands on `downgraded`, not
+`verified`. In full:
+
+| status | meaning |
+| --- | --- |
+| `verified` | a number in the claim was re-derived from the database and matched |
+| `downgraded` | not independently checkable — no recomputable number, recomputation unavailable, or nothing cited |
+| `rejected` | a cited record doesn't exist, or a re-derived value materially disagrees |
+
+The consequence is that the dashboard reports an honest ratio rather than a
+wall of green: on the recommended NPHCDA case, **2 of 10** investigator
+claims clear the verification bar, and the other 8 are labelled "not
+independently checked" instead of being passed off as confirmed. The final
+report draws on verified and downgraded findings but instructs the synthesis
+model to state only `verified` ones as fact and to hedge the rest; rejected
+findings are kept and surfaced in the dashboard as "✗ contradicted by source
+data," not silently dropped.
+
+Because verification reads stored findings and recomputes from DuckDB, it is
+fully decoupled from the LLM — `python -m scripts.reverify_cached` re-checks
+archived investigations offline when the rules change, with no API key and no
+model spend.
 
 **Concurrency & resilience**: the 3 investigators for a case run in
 parallel (`asyncio.gather`); an `asyncio.Semaphore` bounds total concurrent

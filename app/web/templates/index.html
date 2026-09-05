@@ -16,40 +16,56 @@
         <span class="brand-mark">PII</span>
         <div>
           <h1>Procurement Integrity Investigator</h1>
-          <p class="subtitle">Nigeria public procurement &middot; 17,623 real records &middot; deterministic screening + verified AI investigation</p>
+          <p class="subtitle">Screens public contracts for signs of non-competitive or irregular awards &mdash;
+            then checks every AI claim against the source data.</p>
+          <p class="subtitle-meta">For auditors and procurement oversight staff &middot; 17,623 real Nigerian public-procurement records</p>
         </div>
       </div>
       <div id="llm-badge" class="llm-badge">checking LLM status…</div>
     </div>
-    <div class="pipeline-strip" aria-label="Investigation workflow">
-      <span class="pipeline-step"><span class="pipeline-num">1</span>Discover</span>
-      <span class="pipeline-arrow">&rarr;</span>
-      <span class="pipeline-step"><span class="pipeline-num">2</span>Investigate</span>
-      <span class="pipeline-arrow">&rarr;</span>
-      <span class="pipeline-step"><span class="pipeline-num">3</span>Verify</span>
-      <span class="pipeline-arrow">&rarr;</span>
-      <span class="pipeline-step"><span class="pipeline-num">4</span>Conclude</span>
+    <div class="pipeline-strip" aria-label="How the system works">
+      <span class="pipeline-step">
+        <span class="pipeline-num">1</span>
+        <span class="pipeline-text">Discover<em>Rules rank every contract</em></span>
+      </span>
+      <span class="pipeline-arrow" aria-hidden="true">&rarr;</span>
+      <span class="pipeline-step">
+        <span class="pipeline-num">2</span>
+        <span class="pipeline-text">Investigate<em>AI agents examine the case</em></span>
+      </span>
+      <span class="pipeline-arrow" aria-hidden="true">&rarr;</span>
+      <span class="pipeline-step">
+        <span class="pipeline-num">3</span>
+        <span class="pipeline-text">Verify<em>Each AI claim re-checked against the data</em></span>
+      </span>
+      <span class="pipeline-arrow" aria-hidden="true">&rarr;</span>
+      <span class="pipeline-step">
+        <span class="pipeline-num">4</span>
+        <span class="pipeline-text">Conclude<em>Report handed to a human reviewer</em></span>
+      </span>
     </div>
   </header>
 
   <main>
     <section class="hero" id="hero">
+      <div class="funnel" id="stats" aria-label="Screening results">
+        <div class="stat-card"><div class="stat-value" id="stat-total">–</div><div class="stat-label">contracts screened</div></div>
+        <span class="funnel-arrow" aria-hidden="true">&rarr;</span>
+        <div class="stat-card"><div class="stat-value" id="stat-risky">–</div><div class="stat-label">show at least one risk signal</div></div>
+        <span class="funnel-arrow" aria-hidden="true">&rarr;</span>
+        <div class="stat-card stat-high"><div class="stat-value" id="stat-high">–</div><div class="stat-label">score high risk &mdash; review these first</div></div>
+        <p class="funnel-note" id="stats-secondary"></p>
+      </div>
+
       <div class="spotlight" id="spotlight">
         <p class="muted">Loading recommended case…</p>
       </div>
-      <div class="stats" id="stats">
-        <div class="stat-card"><div class="stat-value" id="stat-total">–</div><div class="stat-label">Records screened</div></div>
-        <div class="stat-card"><div class="stat-value" id="stat-risky">–</div><div class="stat-label">Flagged for risk</div></div>
-        <div class="stat-card stat-high"><div class="stat-value" id="stat-high">–</div><div class="stat-label">High-risk cases</div></div>
-        <div class="stat-card"><div class="stat-value" id="stat-medium">–</div><div class="stat-label">Medium-risk</div></div>
-        <div class="stat-card"><div class="stat-value" id="stat-buyers">–</div><div class="stat-label">Buyers</div></div>
-        <div class="stat-card"><div class="stat-value" id="stat-suppliers">–</div><div class="stat-label">Suppliers</div></div>
-      </div>
     </section>
 
+    <h2 class="list-heading">All screened contracts, ranked by risk</h2>
     <section class="toolbar">
-      <input id="search" type="search" placeholder="Search buyer or tender title…" />
-      <select id="risk-filter">
+      <input id="search" type="search" placeholder="Search buyer or tender title…" aria-label="Search buyer or tender title" />
+      <select id="risk-filter" aria-label="Filter by risk level">
         <option value="">All risk levels</option>
         <option value="high">High</option>
         <option value="medium">Medium</option>
@@ -60,14 +76,14 @@
         Diversify by buyer
       </label>
     </section>
-    <p class="hint diversify-hint">Ranked by deterministic risk score. "Diversify by buyer" only changes display
-      order to avoid one buyer's batch of near-identical contracts filling the page — it never changes a case's score.</p>
+    <p class="hint diversify-hint">"Diversify by buyer" only changes display order, so one buyer's batch of
+      near-identical contracts doesn't fill the page. It never changes a case's score.</p>
 
     <section class="case-list">
       <table>
         <thead>
           <tr>
-            <th>Risk</th><th>Case</th><th>Value (NGN)</th><th>Signals</th>
+            <th>Risk <span class="th-sub">/100</span></th><th>Case</th><th>Value (NGN)</th><th>Signals that triggered</th>
           </tr>
         </thead>
         <tbody id="case-rows"></tbody>
@@ -80,9 +96,9 @@
     </section>
   </main>
 
-  <div id="overlay" class="overlay hidden">
+  <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-label="Case file">
     <div class="drawer">
-      <button id="close-drawer" class="close-btn">&times;</button>
+      <button id="close-drawer" class="close-btn" aria-label="Close case file">&times;</button>
       <div id="drawer-content"></div>
     </div>
   </div>

@@ -7,9 +7,23 @@ The LLM's text is never treated as authoritative. For every finding we:
   3. reject or downgrade the claim if the recomputed value materially
      disagrees with what was claimed.
 
-Claims with no recognizable/recomputable numeric assertion are left at
-"verified" on the strength of (1) alone, with that limitation stated
-explicitly in the notes rather than silently upgraded to full confidence.
+"verified" is deliberately a narrow status: it means step (2) actually ran
+and the recomputed value matched. Confirming that a claim's citations point
+at real records (step 1) is a necessary check, not verification of the claim
+itself -- an LLM can cite a perfectly real record and still describe it
+wrongly. So a claim carrying no recomputable numeric assertion ends at
+"downgraded", not "verified", however well-cited it is.
+
+The resulting statuses:
+  verified    a numeric assertion was re-derived from the database and matched
+  downgraded  not independently checkable -- either no recomputable numeric
+              assertion was present, or one was but the recomputation was
+              unavailable, or the claim cited no evidence at all
+  rejected    a cited record does not exist, or a re-derived value materially
+              disagrees with what was claimed
+
+Downgraded findings still reach the final report (they are not assumed
+false); they are simply never presented as independently confirmed.
 """
 import re
 from dataclasses import dataclass
@@ -272,11 +286,10 @@ def verify_finding(finding: Finding, investigator: str) -> VerifiedFinding:
         )
 
     return VerifiedFinding(
-        finding=finding, investigator=investigator, verification_status="verified",
+        finding=finding, investigator=investigator, verification_status="downgraded",
         verification_notes=(
-            "All cited evidence references resolve to real records. No specific numeric "
-            "assertion in this claim could be independently recalculated; the qualitative "
-            "claim is accepted on the strength of the underlying evidence alone."
+            "States no recomputable number, so the claim itself was never independently "
+            "checked — only that the records it cites are real."
         ),
     )
 

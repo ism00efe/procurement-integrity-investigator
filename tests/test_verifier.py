@@ -118,10 +118,34 @@ def test_n_of_m_phrasing_is_not_reinterpreted_by_bare_count_check(temp_database)
     assert "of" in result.verification_notes.lower()
 
 
-def test_qualitative_claim_with_valid_evidence_is_verified(temp_database):
+def test_qualitative_claim_with_valid_evidence_is_not_marked_verified(temp_database):
+    # "verified" must mean a number was re-derived and matched. This claim cites a
+    # real record but asserts no recomputable number ("one" is not a digit the
+    # tenderer-count check can read), so confirming the citation exists proves
+    # nothing about the claim -- an LLM can cite a genuine record and still
+    # describe it wrongly. It must land on "downgraded".
     finding = Finding(
         claim="Only one tenderer participated in this process.",
         evidence_refs=["case:case-1"], confidence=0.8, risk_level="high",
     )
     result = verify_finding(finding, "procedure")
-    assert result.verification_status == "verified"
+    assert result.verification_status == "downgraded"
+    assert "never independently checked" in result.verification_notes.lower()
+
+
+def test_verified_status_is_reserved_for_recomputed_claims(temp_database):
+    # Guards the distinction the dashboard's trust meter reports: every finding
+    # marked "verified" must carry a note showing a recalculation actually ran.
+    recomputed = Finding(
+        claim="The supplier has been awarded 1 contract from the same buyer.",
+        evidence_refs=["buyer:buyer-A", "supplier:supplier-X"],
+        confidence=0.7, risk_level="medium",
+    )
+    not_recomputed = Finding(
+        claim="The buyer appears to favour a narrow pool of suppliers.",
+        evidence_refs=["buyer:buyer-A"], confidence=0.5, risk_level="medium",
+    )
+    verified = verify_finding(recomputed, "supplier")
+    assert verified.verification_status == "verified"
+    assert "recalculated" in verified.verification_notes.lower()
+    assert verify_finding(not_recomputed, "supplier").verification_status == "downgraded"

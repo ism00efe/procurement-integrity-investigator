@@ -17,7 +17,28 @@ app.add_middleware(
 )
 
 WEB_DIR = Path(__file__).resolve().parent.parent / "web"
-app.mount("/static", StaticFiles(directory=str(WEB_DIR / "static")), name="static")
+
+
+class _NoCacheStaticFiles(StaticFiles):
+    """Serve the dashboard's JS/CSS with caching off.
+
+    This is a single-operator local tool, not a high-traffic site, so there is
+    nothing to gain from browser caching here -- and plenty to lose: a stale
+    cached app.js silently renders an old UI against a current backend, which
+    is a confusing failure precisely when you least want one (mid-demo, after
+    an edit). Correctness over a few saved kilobytes.
+    """
+
+    def is_not_modified(self, response_headers, request_headers) -> bool:
+        return False
+
+    async def get_response(self, path: str, scope):
+        response = await super().get_response(path, scope)
+        response.headers["Cache-Control"] = "no-store, must-revalidate"
+        return response
+
+
+app.mount("/static", _NoCacheStaticFiles(directory=str(WEB_DIR / "static")), name="static")
 
 
 def _row_indicators(indicators_json: str) -> list[dict]:
@@ -51,7 +72,10 @@ def _diversify_by_buyer(rows: list[dict], per_buyer_cap: int = 3) -> list[dict]:
 
 @app.get("/")
 def index():
-    return FileResponse(str(WEB_DIR / "templates" / "index.html"))
+    return FileResponse(
+        str(WEB_DIR / "templates" / "index.html"),
+        headers={"Cache-Control": "no-store, must-revalidate"},
+    )
 
 
 @app.get("/api/health")
