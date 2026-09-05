@@ -6,5 +6,7 @@ __pycache__/
 *.duckdb.wal
 server.log
 data/raw/*.jsonl
-data/processed/
-.pytest_cache/
+data/processed/*
+!data/processed/investigations/
+!data/processed/investigations/*.json
+!data/processed/procurement.duckdb

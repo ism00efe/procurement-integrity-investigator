@@ -1,0 +1,542 @@
+{
+  "case": {
+    "case_id": "ocds-gyl66f-229031006-000183",
+    "buyer_id": "NG-BPP-BPP-NOC-229031006",
+    "buyer_name": "ACCIDENT INVESTIGATION BUREAU",
+    "tender_title": "Optimization and Upgrade of the AIB Flight Safety Laboratory",
+    "tender_value_amount": 84673130.19,
+    "tender_value_currency": "NGN",
+    "procurement_method_details": "Direct Procurement",
+    "number_of_tenderers": 1,
+    "risk_score": 63.0,
+    "risk_level": "high",
+    "indicators": [
+      {
+        "id": "SINGLE_BIDDER",
+        "score": 20.0,
+        "explanation": "Only one tenderer participated in this competitive process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ]
+      },
+      {
+        "id": "LOW_COMPETITION_METHOD",
+        "score": 18.0,
+        "explanation": "Procured via \"Direct Procurement\", a reduced-competition method.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ]
+      },
+      {
+        "id": "REPEATED_RELATIONSHIP",
+        "score": 15.0,
+        "explanation": "Buyer \"ACCIDENT INVESTIGATION BUREAU\" has awarded 16 separate contracts to supplier \"Chritzes Integrated Services Limited\" in this dataset.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-229031006",
+          "supplier:NG-BPP-"
+        ]
+      },
+      {
+        "id": "SHORT_TENDER_PERIOD",
+        "score": 10.0,
+        "explanation": "Tender period was only 7 day(s), in the shortest 10% of all tenders in this dataset, limiting time for competitors to bid.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ]
+      }
+    ]
+  },
+  "investigator_outputs": [
+    {
+      "investigator": "Procurement / Procedure Analyst",
+      "case_id": "ocds-gyl66f-229031006-000183",
+      "summary": "The procurement case involved a direct procurement method with only one tenderer participating, raising potential concerns regarding competition. The tender period was notably short, which may have limited opportunities for other bidders.",
+      "findings": [
+        {
+          "claim": "Only one tenderer participated in this competitive process.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to the specialized nature of the procurement, where only a limited number of suppliers have the capability to fulfill the requirements."
+        },
+        {
+          "claim": "Procured via 'Direct Procurement', a reduced-competition method.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "Direct procurement may have been justified to enhance the bureau's investigative activities, suggesting urgency or specialized needs."
+        },
+        {
+          "claim": "Tender period was only 7 days, in the shortest 10% of all tenders in this dataset.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "A short tender period may be typical for urgent projects or specialized services, which could explain the limited time for bidding."
+        },
+        {
+          "claim": "Buyer has awarded 16 separate contracts to supplier 'Chritzes Integrated Services Limited'.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-229031006",
+            "supplier:NG-BPP-"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "A repeated relationship may indicate satisfaction with the supplier's past performance, although it warrants review to ensure competitive practices."
+        }
+      ]
+    },
+    {
+      "investigator": "Supplier / Relationship Analyst",
+      "case_id": "ocds-gyl66f-229031006",
+      "summary": "The analysis of the supplier's history reveals a significant concentration of awards from the Accident Investigation Bureau, with a total of 16 contracts awarded to Chritzes Integrated Services Limited. The buyer has a diverse supplier base, but the high number of awards to a single supplier in a short time frame raises questions about competition and procurement practices.",
+      "findings": [
+        {
+          "claim": "The supplier has been awarded 16 contracts by the Accident Investigation Bureau, indicating a strong relationship.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-229031006",
+            "supplier:NG-BPP-"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "The supplier may have specialized expertise or a proven track record that justifies the repeated awards."
+        },
+        {
+          "claim": "The buyer has a total of 172 tenders with 89 distinct suppliers, indicating a relatively diverse supplier base.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-229031006"
+          ],
+          "confidence": 0.7,
+          "risk_level": "low",
+          "benign_explanation": "The buyer may be actively seeking to diversify its supplier relationships."
+        },
+        {
+          "claim": "The procurement method used was 'Direct Procurement', which is a reduced-competition method.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.6,
+          "risk_level": "medium",
+          "benign_explanation": "Direct procurement may have been justified due to urgency or the specialized nature of the services required."
+        },
+        {
+          "claim": "Only one tenderer participated in this competitive process, indicating low competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The specialized nature of the tender may have limited the pool of potential bidders."
+        },
+        {
+          "claim": "The tender period was only 7 days, which is in the shortest 10% of all tenders, limiting time for competitors to bid.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "A short tender period may have been necessary due to project urgency or specific timelines."
+        }
+      ]
+    },
+    {
+      "investigator": "Price / Benchmark Analyst",
+      "case_id": "ocds-gyl66f-229031006-000183",
+      "summary": "The tender for the Optimization and Upgrade of the AIB Flight Safety Laboratory was awarded to a single bidder with a value of approximately 84.67 million NGN. Peer price comparison is not reliable due to insufficient comparable tenders.",
+      "findings": [
+        {
+          "claim": "The tender's awarded value of 84,673,130.19 NGN lacks reliable peer comparison due to only one comparable tender found.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "The lack of comparable tenders may be due to the specialized nature of the procurement or the urgency of the project."
+        },
+        {
+          "claim": "Only one tenderer participated in the bidding process, indicating low competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to the specialized requirements of the tender that only a limited number of suppliers can meet."
+        },
+        {
+          "claim": "The tender period was only 7 days, which is in the shortest 10% of all tenders, potentially limiting competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.6,
+          "risk_level": "medium",
+          "benign_explanation": "A short tender period may be justified by the urgency of the project to enhance investigative activities."
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in this competitive process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to the specialized nature of the procurement, where only a limited number of suppliers have the capability to fulfill the requirements."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Procured via 'Direct Procurement', a reduced-competition method.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "Direct procurement may have been justified to enhance the bureau's investigative activities, suggesting urgency or specialized needs."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Tender period was only 7 days, in the shortest 10% of all tenders in this dataset.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.8,
+        "risk_level": "medium",
+        "benign_explanation": "A short tender period may be typical for urgent projects or specialized services, which could explain the limited time for bidding."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Buyer has awarded 16 separate contracts to supplier 'Chritzes Integrated Services Limited'.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-229031006",
+          "supplier:NG-BPP-"
+        ],
+        "confidence": 0.8,
+        "risk_level": "medium",
+        "benign_explanation": "A repeated relationship may indicate satisfaction with the supplier's past performance, although it warrants review to ensure competitive practices."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (16) matches claim."
+    },
+    {
+      "finding": {
+        "claim": "The supplier has been awarded 16 contracts by the Accident Investigation Bureau, indicating a strong relationship.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-229031006",
+          "supplier:NG-BPP-"
+        ],
+        "confidence": 0.8,
+        "risk_level": "medium",
+        "benign_explanation": "The supplier may have specialized expertise or a proven track record that justifies the repeated awards."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (16) matches claim."
+    },
+    {
+      "finding": {
+        "claim": "The buyer has a total of 172 tenders with 89 distinct suppliers, indicating a relatively diverse supplier base.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-229031006"
+        ],
+        "confidence": 0.7,
+        "risk_level": "low",
+        "benign_explanation": "The buyer may be actively seeking to diversify its supplier relationships."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The procurement method used was 'Direct Procurement', which is a reduced-competition method.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.6,
+        "risk_level": "medium",
+        "benign_explanation": "Direct procurement may have been justified due to urgency or the specialized nature of the services required."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in this competitive process, indicating low competition.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "The specialized nature of the tender may have limited the pool of potential bidders."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The tender period was only 7 days, which is in the shortest 10% of all tenders, limiting time for competitors to bid.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.7,
+        "risk_level": "medium",
+        "benign_explanation": "A short tender period may have been necessary due to project urgency or specific timelines."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The tender's awarded value of 84,673,130.19 NGN lacks reliable peer comparison due to only one comparable tender found.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.7,
+        "risk_level": "medium",
+        "benign_explanation": "The lack of comparable tenders may be due to the specialized nature of the procurement or the urgency of the project."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in the bidding process, indicating low competition.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.8,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to the specialized requirements of the tender that only a limited number of suppliers can meet."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The tender period was only 7 days, which is in the shortest 10% of all tenders, potentially limiting competition.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-229031006-000183"
+        ],
+        "confidence": 0.6,
+        "risk_level": "medium",
+        "benign_explanation": "A short tender period may be justified by the urgency of the project to enhance investigative activities."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    }
+  ],
+  "report": {
+    "case_id": "ocds-gyl66f-229031006-000183",
+    "overall_risk_level": "high",
+    "deterministic_risk_score": 63.0,
+    "key_findings": [
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in this competitive process.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to the specialized nature of the procurement, where only a limited number of suppliers have the capability to fulfill the requirements."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Procured via 'Direct Procurement', a reduced-competition method.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "Direct procurement may have been justified to enhance the bureau's investigative activities, suggesting urgency or specialized needs."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Tender period was only 7 days, in the shortest 10% of all tenders in this dataset.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "A short tender period may be typical for urgent projects or specialized services, which could explain the limited time for bidding."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Buyer has awarded 16 separate contracts to supplier 'Chritzes Integrated Services Limited'.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-229031006",
+            "supplier:NG-BPP-"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "A repeated relationship may indicate satisfaction with the supplier's past performance, although it warrants review to ensure competitive practices."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (16) matches claim."
+      },
+      {
+        "finding": {
+          "claim": "The supplier has been awarded 16 contracts by the Accident Investigation Bureau, indicating a strong relationship.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-229031006",
+            "supplier:NG-BPP-"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "The supplier may have specialized expertise or a proven track record that justifies the repeated awards."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (16) matches claim."
+      },
+      {
+        "finding": {
+          "claim": "The buyer has a total of 172 tenders with 89 distinct suppliers, indicating a relatively diverse supplier base.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-229031006"
+          ],
+          "confidence": 0.7,
+          "risk_level": "low",
+          "benign_explanation": "The buyer may be actively seeking to diversify its supplier relationships."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The procurement method used was 'Direct Procurement', which is a reduced-competition method.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.6,
+          "risk_level": "medium",
+          "benign_explanation": "Direct procurement may have been justified due to urgency or the specialized nature of the services required."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in this competitive process, indicating low competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The specialized nature of the tender may have limited the pool of potential bidders."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The tender period was only 7 days, which is in the shortest 10% of all tenders, limiting time for competitors to bid.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "A short tender period may have been necessary due to project urgency or specific timelines."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The tender's awarded value of 84,673,130.19 NGN lacks reliable peer comparison due to only one comparable tender found.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "The lack of comparable tenders may be due to the specialized nature of the procurement or the urgency of the project."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in the bidding process, indicating low competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to the specialized requirements of the tender that only a limited number of suppliers can meet."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The tender period was only 7 days, which is in the shortest 10% of all tenders, potentially limiting competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-229031006-000183"
+          ],
+          "confidence": 0.6,
+          "risk_level": "medium",
+          "benign_explanation": "A short tender period may be justified by the urgency of the project to enhance investigative activities."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      }
+    ],
+    "conflicting_evidence": "None identified.",
+    "benign_explanations": "The limited participation and short tender period could be attributed to the specialized requirements of the procurement, which may only be met by a few suppliers, as well as the urgency of the project necessitating a quicker process.",
+    "confidence": 0.8,
+    "recommended_follow_up": "A detailed review of the procurement process should be conducted to assess the justification for the direct procurement method and the short tender period, as well as to evaluate the competitive practices in awarding multiple contracts to the same supplier.",
+    "source_record_refs": [
+      "buyer:NG-BPP-BPP-NOC-229031006",
+      "case:ocds-gyl66f-229031006-000183",
+      "supplier:NG-BPP-"
+    ],
+    "narrative": "The procurement process for this case has several risk indicators, including the participation of only one tenderer and the use of direct procurement, which suggests a reduced-competition method. Additionally, the tender period was notably short at only 7 days, which may have limited opportunities for other suppliers to bid. While these findings require review, they may also be explained by the specialized nature of the procurement and the urgency of the project."
+  },
+  "llm_status": "ok"
+}

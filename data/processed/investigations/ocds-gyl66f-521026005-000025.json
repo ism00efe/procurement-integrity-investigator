@@ -1,0 +1,468 @@
+{
+  "case": {
+    "case_id": "ocds-gyl66f-521026005-000025",
+    "buyer_id": "NG-BPP-BPP-NOC-521026005",
+    "buyer_name": "UNIVERSITY OF BENIN TEACHING HOSPITAL",
+    "tender_title": "Emergency Procurement for Hospital Equipment to Halt the Spread of Covid 19 Pandemic",
+    "tender_value_amount": 50880000.0,
+    "tender_value_currency": "NGN",
+    "procurement_method_details": "Emergency",
+    "number_of_tenderers": 1,
+    "risk_score": 62.0,
+    "risk_level": "high",
+    "indicators": [
+      {
+        "id": "SINGLE_BIDDER",
+        "score": 20.0,
+        "explanation": "Only one tenderer participated in this competitive process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ]
+      },
+      {
+        "id": "SHORT_TENDER_PERIOD",
+        "score": 15.0,
+        "explanation": "Tender period was only 2 day(s), in the shortest 10% of all tenders in this dataset, limiting time for competitors to bid.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ]
+      },
+      {
+        "id": "REPEATED_RELATIONSHIP",
+        "score": 15.0,
+        "explanation": "Buyer \"UNIVERSITY OF BENIN TEACHING HOSPITAL\" has awarded 21 separate contracts to supplier \"Sudabelt Medical Co. Limited\" in this dataset.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521026005",
+          "supplier:NG-BPP-BPP-CI-819"
+        ]
+      },
+      {
+        "id": "LOW_COMPETITION_METHOD",
+        "score": 12.0,
+        "explanation": "Procured via \"Emergency\", a reduced-competition method.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ]
+      }
+    ]
+  },
+  "investigator_outputs": [
+    {
+      "investigator": "Procurement / Procedure Analyst",
+      "case_id": "ocds-gyl66f-521026005-000025",
+      "summary": "The procurement case involved a single tenderer participating in an emergency procurement process for hospital equipment during the Covid-19 pandemic. The tender period was notably short, lasting only two days, which may have limited competition.",
+      "findings": [
+        {
+          "claim": "Only one tenderer participated in this competitive process.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "Emergency procurement may have limited the pool of eligible suppliers who could respond in time."
+        },
+        {
+          "claim": "Tender period was only 2 days, in the shortest 10% of all tenders in this dataset.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The urgency of the Covid-19 pandemic may necessitate expedited procurement processes."
+        },
+        {
+          "claim": "Buyer has awarded 21 separate contracts to supplier Sudabelt Medical Co. Limited.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521026005",
+            "supplier:NG-BPP-BPP-CI-819"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "Long-term relationships with suppliers can be common in specialized procurement scenarios, especially in emergencies."
+        },
+        {
+          "claim": "Procured via 'Emergency', a reduced-competition method.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.9,
+          "risk_level": "medium",
+          "benign_explanation": "Emergency procurement methods are often justified in situations requiring immediate action, such as public health crises."
+        }
+      ]
+    },
+    {
+      "investigator": "Supplier / Relationship Analyst",
+      "case_id": "ocds-gyl66f-521026005-000025",
+      "summary": "The analysis of the supplier's history reveals a high concentration of awards from the University of Benin Teaching Hospital, with a significant number of contracts awarded to Sudabelt Medical Co. Limited. The emergency procurement method and the single bidder participation raise questions about competition and supplier diversity.",
+      "findings": [
+        {
+          "claim": "The supplier Sudabelt Medical Co. Limited has received 21 contracts from the University of Benin Teaching Hospital, indicating a repeated relationship.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521026005",
+            "supplier:NG-BPP-BPP-CI-819"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The repeated awards may reflect a long-standing relationship based on trust and reliability, particularly in emergency situations."
+        },
+        {
+          "claim": "The University of Benin Teaching Hospital has a high share of single bidder tenders (61.5%) and has used the emergency procurement method frequently (53 out of 96 tenders).",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521026005"
+          ],
+          "confidence": 0.85,
+          "risk_level": "high",
+          "benign_explanation": "The high percentage of single bidders and emergency procurement may be justified by the urgent need for medical supplies during the pandemic."
+        },
+        {
+          "claim": "Sudabelt Medical Co. Limited has a total of 28 awards across 6 distinct buyers, indicating a diverse client base.",
+          "evidence_refs": [
+            "supplier:NG-BPP-BPP-CI-819"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "The supplier's diverse client base suggests they are a recognized provider in the market, which could explain their repeated contracts with the University of Benin Teaching Hospital."
+        }
+      ]
+    },
+    {
+      "investigator": "Price / Benchmark Analyst",
+      "case_id": "ocds-gyl66f-521026005-000025",
+      "summary": "The tender for emergency procurement of hospital equipment has only one bidder and a very short tender period, which raises concerns about competition. Additionally, there is insufficient peer comparison data to assess the awarded value against similar tenders.",
+      "findings": [
+        {
+          "claim": "Only one tenderer participated in the bidding process, which may indicate low competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to the specialized nature of the equipment or the urgency of the procurement."
+        },
+        {
+          "claim": "The tender period was only 2 days, limiting the opportunity for other bidders to participate.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.7,
+          "risk_level": "high",
+          "benign_explanation": "Emergency procurement often necessitates shorter timelines to address urgent needs."
+        },
+        {
+          "claim": "There is insufficient peer comparison data to evaluate the tender's value against similar tenders.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.6,
+          "risk_level": "medium",
+          "benign_explanation": "The lack of comparable tenders may be due to the unique circumstances surrounding the Covid-19 pandemic."
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in this competitive process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "Emergency procurement may have limited the pool of eligible suppliers who could respond in time."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Tender period was only 2 days, in the shortest 10% of all tenders in this dataset.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "The urgency of the Covid-19 pandemic may necessitate expedited procurement processes."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Buyer has awarded 21 separate contracts to supplier Sudabelt Medical Co. Limited.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521026005",
+          "supplier:NG-BPP-BPP-CI-819"
+        ],
+        "confidence": 0.8,
+        "risk_level": "medium",
+        "benign_explanation": "Long-term relationships with suppliers can be common in specialized procurement scenarios, especially in emergencies."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (21) matches claim."
+    },
+    {
+      "finding": {
+        "claim": "Procured via 'Emergency', a reduced-competition method.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ],
+        "confidence": 0.9,
+        "risk_level": "medium",
+        "benign_explanation": "Emergency procurement methods are often justified in situations requiring immediate action, such as public health crises."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The supplier Sudabelt Medical Co. Limited has received 21 contracts from the University of Benin Teaching Hospital, indicating a repeated relationship.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521026005",
+          "supplier:NG-BPP-BPP-CI-819"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "The repeated awards may reflect a long-standing relationship based on trust and reliability, particularly in emergency situations."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (21) matches claim."
+    },
+    {
+      "finding": {
+        "claim": "The University of Benin Teaching Hospital has a high share of single bidder tenders (61.5%) and has used the emergency procurement method frequently (53 out of 96 tenders).",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521026005"
+        ],
+        "confidence": 0.85,
+        "risk_level": "high",
+        "benign_explanation": "The high percentage of single bidders and emergency procurement may be justified by the urgent need for medical supplies during the pandemic."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Sudabelt Medical Co. Limited has a total of 28 awards across 6 distinct buyers, indicating a diverse client base.",
+        "evidence_refs": [
+          "supplier:NG-BPP-BPP-CI-819"
+        ],
+        "confidence": 0.8,
+        "risk_level": "medium",
+        "benign_explanation": "The supplier's diverse client base suggests they are a recognized provider in the market, which could explain their repeated contracts with the University of Benin Teaching Hospital."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in the bidding process, which may indicate low competition.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ],
+        "confidence": 0.8,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to the specialized nature of the equipment or the urgency of the procurement."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The tender period was only 2 days, limiting the opportunity for other bidders to participate.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ],
+        "confidence": 0.7,
+        "risk_level": "high",
+        "benign_explanation": "Emergency procurement often necessitates shorter timelines to address urgent needs."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "There is insufficient peer comparison data to evaluate the tender's value against similar tenders.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521026005-000025"
+        ],
+        "confidence": 0.6,
+        "risk_level": "medium",
+        "benign_explanation": "The lack of comparable tenders may be due to the unique circumstances surrounding the Covid-19 pandemic."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    }
+  ],
+  "report": {
+    "case_id": "ocds-gyl66f-521026005-000025",
+    "overall_risk_level": "high",
+    "deterministic_risk_score": 62.0,
+    "key_findings": [
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in this competitive process.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "Emergency procurement may have limited the pool of eligible suppliers who could respond in time."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Tender period was only 2 days, in the shortest 10% of all tenders in this dataset.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The urgency of the Covid-19 pandemic may necessitate expedited procurement processes."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Buyer has awarded 21 separate contracts to supplier Sudabelt Medical Co. Limited.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521026005",
+            "supplier:NG-BPP-BPP-CI-819"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "Long-term relationships with suppliers can be common in specialized procurement scenarios, especially in emergencies."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (21) matches claim."
+      },
+      {
+        "finding": {
+          "claim": "Procured via 'Emergency', a reduced-competition method.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.9,
+          "risk_level": "medium",
+          "benign_explanation": "Emergency procurement methods are often justified in situations requiring immediate action, such as public health crises."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The supplier Sudabelt Medical Co. Limited has received 21 contracts from the University of Benin Teaching Hospital, indicating a repeated relationship.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521026005",
+            "supplier:NG-BPP-BPP-CI-819"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The repeated awards may reflect a long-standing relationship based on trust and reliability, particularly in emergency situations."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (21) matches claim."
+      },
+      {
+        "finding": {
+          "claim": "The University of Benin Teaching Hospital has a high share of single bidder tenders (61.5%) and has used the emergency procurement method frequently (53 out of 96 tenders).",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521026005"
+          ],
+          "confidence": 0.85,
+          "risk_level": "high",
+          "benign_explanation": "The high percentage of single bidders and emergency procurement may be justified by the urgent need for medical supplies during the pandemic."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Sudabelt Medical Co. Limited has a total of 28 awards across 6 distinct buyers, indicating a diverse client base.",
+          "evidence_refs": [
+            "supplier:NG-BPP-BPP-CI-819"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "The supplier's diverse client base suggests they are a recognized provider in the market, which could explain their repeated contracts with the University of Benin Teaching Hospital."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in the bidding process, which may indicate low competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to the specialized nature of the equipment or the urgency of the procurement."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The tender period was only 2 days, limiting the opportunity for other bidders to participate.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.7,
+          "risk_level": "high",
+          "benign_explanation": "Emergency procurement often necessitates shorter timelines to address urgent needs."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "There is insufficient peer comparison data to evaluate the tender's value against similar tenders.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521026005-000025"
+          ],
+          "confidence": 0.6,
+          "risk_level": "medium",
+          "benign_explanation": "The lack of comparable tenders may be due to the unique circumstances surrounding the Covid-19 pandemic."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      }
+    ],
+    "conflicting_evidence": "None identified.",
+    "benign_explanations": "The limited participation and short tender period may be attributed to the urgency of the Covid-19 pandemic, which necessitated expedited procurement processes. Long-term relationships with suppliers can also be common in emergency scenarios, reflecting trust and reliability.",
+    "confidence": 0.85,
+    "recommended_follow_up": "A detailed review of the procurement process and the circumstances surrounding the emergency procurement methods should be conducted to assess compliance and identify any potential areas of concern.",
+    "source_record_refs": [
+      "buyer:NG-BPP-BPP-NOC-521026005",
+      "case:ocds-gyl66f-521026005-000025",
+      "supplier:NG-BPP-BPP-CI-819"
+    ],
+    "narrative": "The procurement process for this case has several risk indicators, including a single tenderer participating and a notably short tender period of only 2 days. Additionally, the supplier Sudabelt Medical Co. Limited has received a significant number of contracts from the University of Benin Teaching Hospital, which may suggest a repeated relationship. These factors, combined with a high percentage of single bidder tenders and frequent use of emergency procurement methods, require review."
+  },
+  "llm_status": "ok"
+}

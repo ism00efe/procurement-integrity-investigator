@@ -375,6 +375,10 @@ async function runInvestigation(caseId) {
   try {
     const res = await fetch(`/api/cases/${encodeURIComponent(caseId)}/investigate`, { method: "POST" });
     const data = await res.json();
+    if (!res.ok) {
+      resultEl.innerHTML = `<div class="error-box">${data.detail || "Investigation is unavailable."}</div>`;
+      return;
+    }
     renderInvestigationResult(data, caseId);
   } catch (err) {
     resultEl.innerHTML = `<div class="error-box">Investigation failed: ${err}</div>`;
