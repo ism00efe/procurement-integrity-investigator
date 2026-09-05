@@ -1,0 +1,488 @@
+{
+  "case": {
+    "case_id": "ocds-gyl66f-521003001-000378",
+    "buyer_id": "NG-BPP-BPP-NOC-521003001",
+    "buyer_name": "NATIONAL PRIMARY HEALTH CARE DEVELOPMENT AGENCY",
+    "tender_title": "Printing and Supply of Flip charts on COVID-19 for community volunteers at SEZ",
+    "tender_value_amount": 44756620.0,
+    "tender_value_currency": "NGN",
+    "procurement_method_details": "Emergency",
+    "number_of_tenderers": 1,
+    "risk_score": 80.9,
+    "risk_level": "high",
+    "indicators": [
+      {
+        "id": "SINGLE_BIDDER",
+        "score": 20.0,
+        "explanation": "Only one tenderer participated in this competitive process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ]
+      },
+      {
+        "id": "SHORT_TENDER_PERIOD",
+        "score": 15.0,
+        "explanation": "Tender period was only 2 day(s), in the shortest 10% of all tenders in this dataset, limiting time for competitors to bid.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ]
+      },
+      {
+        "id": "REPEATED_RELATIONSHIP",
+        "score": 15.0,
+        "explanation": "Buyer \"NATIONAL PRIMARY HEALTH CARE DEVELOPMENT AGENCY\" has awarded 15 separate contracts to supplier \"MARVELOUS MIKE PRESS LIMITED\" in this dataset.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521003001",
+          "supplier:NG-BPP-BPP-CI-692"
+        ]
+      },
+      {
+        "id": "LOW_COMPETITION_METHOD",
+        "score": 12.0,
+        "explanation": "Procured via \"Emergency\", a reduced-competition method.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ]
+      },
+      {
+        "id": "SUPPLIER_CONCENTRATION",
+        "score": 11.2,
+        "explanation": "Supplier \"MARVELOUS MIKE PRESS LIMITED\" received 45% of the total award value from buyer \"NATIONAL PRIMARY HEALTH CARE DEVELOPMENT AGENCY\" across 15 contracts in this dataset.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521003001",
+          "supplier:NG-BPP-BPP-CI-692"
+        ]
+      },
+      {
+        "id": "PEER_PRICE_OUTLIER",
+        "score": 7.7,
+        "explanation": "Estimated value is 1.6x the median for 8 tenders with similar item descriptions (\"charts community covid flip printing volunteers\").",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ]
+      }
+    ]
+  },
+  "investigator_outputs": [
+    {
+      "investigator": "Procurement / Procedure Analyst",
+      "case_id": "ocds-gyl66f-521003001-000378",
+      "summary": "The procurement case involved a single tenderer and was conducted under an emergency procurement method with a very short tender period of two days. This raises several procedural risk indicators that warrant further investigation.",
+      "findings": [
+        {
+          "claim": "Only one tenderer participated in the bidding process, which limits competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to the specialized nature of the procurement or the urgency of the need, which may have limited the number of capable suppliers."
+        },
+        {
+          "claim": "The tender period was only two days, which is significantly shorter than typical practices.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "The short duration may be justified by the urgent need for the goods related to COVID-19 response."
+        },
+        {
+          "claim": "The procurement was conducted via an emergency method, which is a reduced-competition approach.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 1.0,
+          "risk_level": "medium",
+          "benign_explanation": "Emergency procurement methods are often necessary in urgent situations, such as public health crises."
+        },
+        {
+          "claim": "The buyer has awarded multiple contracts to the same supplier, indicating a potential concentration of awards.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521003001",
+            "supplier:NG-BPP-BPP-CI-692"
+          ],
+          "confidence": 1.0,
+          "risk_level": "medium",
+          "benign_explanation": "This could reflect a long-standing relationship or trust in the supplier's capabilities, especially in urgent situations."
+        },
+        {
+          "claim": "The estimated value of the tender is significantly higher than the median for similar tenders, suggesting a possible price anomaly.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 1.0,
+          "risk_level": "medium",
+          "benign_explanation": "Higher costs may be attributed to urgent procurement needs or specific requirements that justify the price."
+        }
+      ]
+    },
+    {
+      "investigator": "Supplier / Relationship Analyst",
+      "case_id": "ocds-gyl66f-521003001-000378",
+      "summary": "The supplier, MARVELOUS MIKE PRESS LIMITED, has a significant history with the buyer, having received 15 contracts, which is a notable concentration of awards. Additionally, the supplier accounts for 45% of the total award value from the buyer, indicating a strong reliance on this supplier.",
+      "findings": [
+        {
+          "claim": "The supplier has received 45% of the total award value from the buyer across 15 contracts, indicating a high concentration of awards.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521003001",
+            "supplier:NG-BPP-BPP-CI-692"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The concentration may be due to the supplier's specialization in printing services, particularly in emergency contexts like COVID-19."
+        },
+        {
+          "claim": "The buyer has awarded 15 contracts to the supplier, which is a significant number relative to the buyer's total of 32 tenders.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521003001",
+            "supplier:NG-BPP-BPP-CI-692"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "This pattern could reflect a long-standing relationship or the supplier's proven reliability in fulfilling urgent printing needs."
+        },
+        {
+          "claim": "The supplier has a total of 20 awards from 2 distinct buyers, indicating a limited supplier base.",
+          "evidence_refs": [
+            "supplier:NG-BPP-BPP-CI-692"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "The supplier may be focused on niche markets or specific types of contracts, which could explain the limited buyer diversity."
+        }
+      ]
+    },
+    {
+      "investigator": "Price / Benchmark Analyst",
+      "case_id": "ocds-gyl66f-521003001-000378",
+      "summary": "The awarded value of the tender appears to be significantly higher than the median of similar tenders, and there is only one bidder involved in this procurement process.",
+      "findings": [
+        {
+          "claim": "The awarded value of 44,756,620 NGN is 1.55 times the median value of 28,838,205 NGN for similar tenders, indicating a possible anomaly in pricing.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "The higher value could be justified by the urgency of the procurement due to the COVID-19 pandemic, which may have led to increased costs for rapid delivery."
+        },
+        {
+          "claim": "Only one tenderer participated in this procurement process, which limits competitive pricing.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The emergency procurement method may have restricted the time available for other suppliers to respond."
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in the bidding process, which limits competition.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ],
+        "confidence": 1.0,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to the specialized nature of the procurement or the urgency of the need, which may have limited the number of capable suppliers."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The tender period was only two days, which is significantly shorter than typical practices.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ],
+        "confidence": 1.0,
+        "risk_level": "high",
+        "benign_explanation": "The short duration may be justified by the urgent need for the goods related to COVID-19 response."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The procurement was conducted via an emergency method, which is a reduced-competition approach.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ],
+        "confidence": 1.0,
+        "risk_level": "medium",
+        "benign_explanation": "Emergency procurement methods are often necessary in urgent situations, such as public health crises."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The buyer has awarded multiple contracts to the same supplier, indicating a potential concentration of awards.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521003001",
+          "supplier:NG-BPP-BPP-CI-692"
+        ],
+        "confidence": 1.0,
+        "risk_level": "medium",
+        "benign_explanation": "This could reflect a long-standing relationship or trust in the supplier's capabilities, especially in urgent situations."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The estimated value of the tender is significantly higher than the median for similar tenders, suggesting a possible price anomaly.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ],
+        "confidence": 1.0,
+        "risk_level": "medium",
+        "benign_explanation": "Higher costs may be attributed to urgent procurement needs or specific requirements that justify the price."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The supplier has received 45% of the total award value from the buyer across 15 contracts, indicating a high concentration of awards.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521003001",
+          "supplier:NG-BPP-BPP-CI-692"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "The concentration may be due to the supplier's specialization in printing services, particularly in emergency contexts like COVID-19."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (15) matches claim. Recalculated share (45%) matches claimed 45%."
+    },
+    {
+      "finding": {
+        "claim": "The buyer has awarded 15 contracts to the supplier, which is a significant number relative to the buyer's total of 32 tenders.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521003001",
+          "supplier:NG-BPP-BPP-CI-692"
+        ],
+        "confidence": 0.8,
+        "risk_level": "medium",
+        "benign_explanation": "This pattern could reflect a long-standing relationship or the supplier's proven reliability in fulfilling urgent printing needs."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (15) matches claim."
+    },
+    {
+      "finding": {
+        "claim": "The supplier has a total of 20 awards from 2 distinct buyers, indicating a limited supplier base.",
+        "evidence_refs": [
+          "supplier:NG-BPP-BPP-CI-692"
+        ],
+        "confidence": 0.7,
+        "risk_level": "medium",
+        "benign_explanation": "The supplier may be focused on niche markets or specific types of contracts, which could explain the limited buyer diversity."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The awarded value of 44,756,620 NGN is 1.55 times the median value of 28,838,205 NGN for similar tenders, indicating a possible anomaly in pricing.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ],
+        "confidence": 0.8,
+        "risk_level": "high",
+        "benign_explanation": "The higher value could be justified by the urgency of the procurement due to the COVID-19 pandemic, which may have led to increased costs for rapid delivery."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in this procurement process, which limits competitive pricing.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521003001-000378"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "The emergency procurement method may have restricted the time available for other suppliers to respond."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    }
+  ],
+  "report": {
+    "case_id": "ocds-gyl66f-521003001-000378",
+    "overall_risk_level": "high",
+    "deterministic_risk_score": 80.9,
+    "key_findings": [
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in the bidding process, which limits competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to the specialized nature of the procurement or the urgency of the need, which may have limited the number of capable suppliers."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The tender period was only two days, which is significantly shorter than typical practices.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "The short duration may be justified by the urgent need for the goods related to COVID-19 response."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The procurement was conducted via an emergency method, which is a reduced-competition approach.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 1.0,
+          "risk_level": "medium",
+          "benign_explanation": "Emergency procurement methods are often necessary in urgent situations, such as public health crises."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The buyer has awarded multiple contracts to the same supplier, indicating a potential concentration of awards.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521003001",
+            "supplier:NG-BPP-BPP-CI-692"
+          ],
+          "confidence": 1.0,
+          "risk_level": "medium",
+          "benign_explanation": "This could reflect a long-standing relationship or trust in the supplier's capabilities, especially in urgent situations."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The estimated value of the tender is significantly higher than the median for similar tenders, suggesting a possible price anomaly.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 1.0,
+          "risk_level": "medium",
+          "benign_explanation": "Higher costs may be attributed to urgent procurement needs or specific requirements that justify the price."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The supplier has received 45% of the total award value from the buyer across 15 contracts, indicating a high concentration of awards.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521003001",
+            "supplier:NG-BPP-BPP-CI-692"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The concentration may be due to the supplier's specialization in printing services, particularly in emergency contexts like COVID-19."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (15) matches claim. Recalculated share (45%) matches claimed 45%."
+      },
+      {
+        "finding": {
+          "claim": "The buyer has awarded 15 contracts to the supplier, which is a significant number relative to the buyer's total of 32 tenders.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521003001",
+            "supplier:NG-BPP-BPP-CI-692"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "This pattern could reflect a long-standing relationship or the supplier's proven reliability in fulfilling urgent printing needs."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (15) matches claim."
+      },
+      {
+        "finding": {
+          "claim": "The supplier has a total of 20 awards from 2 distinct buyers, indicating a limited supplier base.",
+          "evidence_refs": [
+            "supplier:NG-BPP-BPP-CI-692"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "The supplier may be focused on niche markets or specific types of contracts, which could explain the limited buyer diversity."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The awarded value of 44,756,620 NGN is 1.55 times the median value of 28,838,205 NGN for similar tenders, indicating a possible anomaly in pricing.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "The higher value could be justified by the urgency of the procurement due to the COVID-19 pandemic, which may have led to increased costs for rapid delivery."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in this procurement process, which limits competitive pricing.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521003001-000378"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The emergency procurement method may have restricted the time available for other suppliers to respond."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      }
+    ],
+    "conflicting_evidence": "None identified.",
+    "benign_explanations": "The limited participation and short tender period may be attributed to the specialized nature of the procurement and the urgency related to COVID-19 response. The concentration of awards to the supplier could reflect a long-standing relationship or trust in their capabilities, particularly in emergency contexts.",
+    "confidence": 0.8,
+    "recommended_follow_up": "A detailed review of the procurement process and supplier relationships is recommended to assess the appropriateness of the emergency procurement method and the implications of the concentration of awards.",
+    "source_record_refs": [
+      "buyer:NG-BPP-BPP-NOC-521003001",
+      "case:ocds-gyl66f-521003001-000378",
+      "supplier:NG-BPP-BPP-CI-692"
+    ],
+    "narrative": "The procurement case exhibits several risk indicators, including limited competition with only one tenderer participating and a notably short tender period of two days. The procurement was conducted via an emergency method, which may have contributed to these patterns. Additionally, the supplier has received a significant concentration of awards, accounting for 45% of the total award value across 15 contracts, which raises further concerns about competitive practices."
+  },
+  "llm_status": "ok"
+}

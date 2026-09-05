@@ -1,0 +1,16 @@
+# Render blueprint for the public read-only prototype.
+#
+# Single web service. The DuckDB database (data/processed/procurement.duckdb)
+# and the six cached investigations (data/processed/investigations/*.json) are
+# committed to the repo and shipped in the image, so the build only needs to
+# install dependencies. No environment secret is required: without
+# OPENROUTER_API_KEY the deterministic screening experience and the bundled
+# cached flagship investigation work fully, and the live POST investigate route
+# returns 503 instead of calling any LLM.
+services:
+  - type: web
+    name: procurement-integrity-investigator
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.api.main:app --host 0.0.0.0 --port $PORT

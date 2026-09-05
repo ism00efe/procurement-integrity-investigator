@@ -1,0 +1,523 @@
+{
+  "case": {
+    "case_id": "ocds-gyl66f-521027024-000087",
+    "buyer_id": "NG-BPP-BPP-NOC-521027024",
+    "buyer_name": "FEDERAL MEDICAL CENTRE, NGURU YOBE",
+    "tender_title": "Award of contract forSupply and installation of modern central sterile (cssd)equipment",
+    "tender_value_amount": 109739262.78,
+    "tender_value_currency": "NGN",
+    "procurement_method_details": "National Competitive Bidding",
+    "number_of_tenderers": 1,
+    "risk_score": 73.0,
+    "risk_level": "high",
+    "indicators": [
+      {
+        "id": "SINGLE_BIDDER",
+        "score": 20.0,
+        "explanation": "Only one tenderer participated in this competitive process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087"
+        ]
+      },
+      {
+        "id": "PRICE_DEVIATION",
+        "score": 20.0,
+        "explanation": "Awarded value is 9900% above the tender's own estimated value.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087",
+          "award:ocds-gyl66f-521027024-000087:14000"
+        ]
+      },
+      {
+        "id": "SUPPLIER_CONCENTRATION",
+        "score": 18.0,
+        "explanation": "Supplier \"JNCI International limited\" received 94% of the total award value from buyer \"FEDERAL MEDICAL CENTRE, NGURU YOBE\" across 18 contracts in this dataset.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521027024",
+          "supplier:NG-BPP-RC492239"
+        ]
+      },
+      {
+        "id": "REPEATED_RELATIONSHIP",
+        "score": 15.0,
+        "explanation": "Buyer \"FEDERAL MEDICAL CENTRE, NGURU YOBE\" has awarded 18 separate contracts to supplier \"JNCI International limited\" in this dataset.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521027024",
+          "supplier:NG-BPP-RC492239"
+        ]
+      }
+    ]
+  },
+  "investigator_outputs": [
+    {
+      "investigator": "Procurement / Procedure Analyst",
+      "case_id": "ocds-gyl66f-521027024-000087",
+      "summary": "The procurement process for the supply and installation of central sterile equipment involved only one tenderer and a significant price deviation from the estimated value. These factors, along with a high concentration of awards to a single supplier, warrant further investigation.",
+      "findings": [
+        {
+          "claim": "Only one tenderer participated in the bidding process, which is unusual for a National Competitive Bidding.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized market where few suppliers can meet the technical requirements."
+        },
+        {
+          "claim": "The awarded value is significantly above the tender's estimated value, indicating a possible price deviation.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087",
+            "award:ocds-gyl66f-521027024-000087:14000"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "The high cost may reflect the specialized nature of the equipment or emergency procurement needs."
+        },
+        {
+          "claim": "Supplier \"JNCI International limited\" has received a high percentage of total award value from the buyer, indicating supplier concentration.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521027024",
+            "supplier:NG-BPP-RC492239"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "This could indicate a strong ongoing relationship or the supplier's unique capability to deliver the required services."
+        },
+        {
+          "claim": "The buyer has awarded multiple contracts to the same supplier, suggesting a repeated relationship.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521027024",
+            "supplier:NG-BPP-RC492239"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "Repeated contracts may be due to satisfactory past performance or a lack of alternative suppliers."
+        }
+      ]
+    },
+    {
+      "investigator": "Supplier / Relationship Analyst",
+      "case_id": "ocds-gyl66f-521027024-000087",
+      "summary": "The winning supplier, JNCI International Limited, has a highly concentrated award history with the buyer, Federal Medical Centre, Nguru Yobe, having awarded 94% of its total contract value to this supplier across 18 contracts. The recent tender shows a significant price deviation compared to the estimated value, and only one bidder participated in the process, which raises several risk indicators for review.",
+      "findings": [
+        {
+          "claim": "Supplier \"JNCI International Limited\" received 94% of the total award value from buyer \"Federal Medical Centre, Nguru Yobe\" across 18 contracts.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521027024",
+            "supplier:NG-BPP-RC492239"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The high concentration may be due to the supplier's specialization in the required equipment, or a long-standing relationship that has proven effective."
+        },
+        {
+          "claim": "Buyer \"Federal Medical Centre, Nguru Yobe\" has awarded 18 separate contracts to supplier \"JNCI International Limited\".",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521027024",
+            "supplier:NG-BPP-RC492239"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "Repeated contracts could indicate satisfaction with the supplier's performance or a lack of alternative suppliers in the market."
+        },
+        {
+          "claim": "Only one tenderer participated in this competitive process.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized requirement that only a few suppliers can meet, or timing issues that limited participation."
+        },
+        {
+          "claim": "Awarded value is 9900% above the tender's own estimated value.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087",
+            "award:ocds-gyl66f-521027024-000087:14000"
+          ],
+          "confidence": 0.85,
+          "risk_level": "high",
+          "benign_explanation": "The price deviation may reflect unique specifications or urgent needs that justify a higher cost."
+        }
+      ]
+    },
+    {
+      "investigator": "Price / Benchmark Analyst",
+      "case_id": "ocds-gyl66f-521027024-000087",
+      "summary": "The tender for the supply and installation of central sterile equipment has raised several risk indicators, particularly concerning the number of bidders and the awarded value compared to the tender estimate. The peer price comparison is not reliable due to a lack of comparable tenders.",
+      "findings": [
+        {
+          "claim": "Only one tenderer participated in the bidding process.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized market where few suppliers are capable of meeting the specific requirements."
+        },
+        {
+          "claim": "The awarded value is significantly above the tender's estimated value.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087",
+            "award:ocds-gyl66f-521027024-000087:14000"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The high awarded value may reflect urgent procurement needs or unique specifications that justify a premium."
+        },
+        {
+          "claim": "Fewer than 3 comparable tenders were found for peer price comparison.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "The lack of comparable tenders may indicate a niche market or recent changes in procurement practices."
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in the bidding process, which is unusual for a National Competitive Bidding.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to a specialized market where few suppliers can meet the technical requirements."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The awarded value is significantly above the tender's estimated value, indicating a possible price deviation.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087",
+          "award:ocds-gyl66f-521027024-000087:14000"
+        ],
+        "confidence": 0.8,
+        "risk_level": "high",
+        "benign_explanation": "The high cost may reflect the specialized nature of the equipment or emergency procurement needs."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Supplier \"JNCI International limited\" has received a high percentage of total award value from the buyer, indicating supplier concentration.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521027024",
+          "supplier:NG-BPP-RC492239"
+        ],
+        "confidence": 0.7,
+        "risk_level": "medium",
+        "benign_explanation": "This could indicate a strong ongoing relationship or the supplier's unique capability to deliver the required services."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The buyer has awarded multiple contracts to the same supplier, suggesting a repeated relationship.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521027024",
+          "supplier:NG-BPP-RC492239"
+        ],
+        "confidence": 0.7,
+        "risk_level": "medium",
+        "benign_explanation": "Repeated contracts may be due to satisfactory past performance or a lack of alternative suppliers."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Supplier \"JNCI International Limited\" received 94% of the total award value from buyer \"Federal Medical Centre, Nguru Yobe\" across 18 contracts.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521027024",
+          "supplier:NG-BPP-RC492239"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "The high concentration may be due to the supplier's specialization in the required equipment, or a long-standing relationship that has proven effective."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (18) matches claim. Recalculated share (94%) matches claimed 94%."
+    },
+    {
+      "finding": {
+        "claim": "Buyer \"Federal Medical Centre, Nguru Yobe\" has awarded 18 separate contracts to supplier \"JNCI International Limited\".",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-521027024",
+          "supplier:NG-BPP-RC492239"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "Repeated contracts could indicate satisfaction with the supplier's performance or a lack of alternative suppliers in the market."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (18) matches claim."
+    },
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in this competitive process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087"
+        ],
+        "confidence": 0.8,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to a specialized requirement that only a few suppliers can meet, or timing issues that limited participation."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Awarded value is 9900% above the tender's own estimated value.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087",
+          "award:ocds-gyl66f-521027024-000087:14000"
+        ],
+        "confidence": 0.85,
+        "risk_level": "high",
+        "benign_explanation": "The price deviation may reflect unique specifications or urgent needs that justify a higher cost."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated award/tender deviation (9900%) matches claimed 9900%."
+    },
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in the bidding process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to a specialized market where few suppliers are capable of meeting the specific requirements."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The awarded value is significantly above the tender's estimated value.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087",
+          "award:ocds-gyl66f-521027024-000087:14000"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "The high awarded value may reflect urgent procurement needs or unique specifications that justify a premium."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "Fewer than 3 comparable tenders were found for peer price comparison.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-521027024-000087"
+        ],
+        "confidence": 0.8,
+        "risk_level": "medium",
+        "benign_explanation": "The lack of comparable tenders may indicate a niche market or recent changes in procurement practices."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    }
+  ],
+  "report": {
+    "case_id": "ocds-gyl66f-521027024-000087",
+    "overall_risk_level": "high",
+    "deterministic_risk_score": 73.0,
+    "key_findings": [
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in the bidding process, which is unusual for a National Competitive Bidding.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized market where few suppliers can meet the technical requirements."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The awarded value is significantly above the tender's estimated value, indicating a possible price deviation.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087",
+            "award:ocds-gyl66f-521027024-000087:14000"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "The high cost may reflect the specialized nature of the equipment or emergency procurement needs."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Supplier \"JNCI International limited\" has received a high percentage of total award value from the buyer, indicating supplier concentration.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521027024",
+            "supplier:NG-BPP-RC492239"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "This could indicate a strong ongoing relationship or the supplier's unique capability to deliver the required services."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The buyer has awarded multiple contracts to the same supplier, suggesting a repeated relationship.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521027024",
+            "supplier:NG-BPP-RC492239"
+          ],
+          "confidence": 0.7,
+          "risk_level": "medium",
+          "benign_explanation": "Repeated contracts may be due to satisfactory past performance or a lack of alternative suppliers."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Supplier \"JNCI International Limited\" received 94% of the total award value from buyer \"Federal Medical Centre, Nguru Yobe\" across 18 contracts.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521027024",
+            "supplier:NG-BPP-RC492239"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The high concentration may be due to the supplier's specialization in the required equipment, or a long-standing relationship that has proven effective."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (18) matches claim. Recalculated share (94%) matches claimed 94%."
+      },
+      {
+        "finding": {
+          "claim": "Buyer \"Federal Medical Centre, Nguru Yobe\" has awarded 18 separate contracts to supplier \"JNCI International Limited\".",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-521027024",
+            "supplier:NG-BPP-RC492239"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "Repeated contracts could indicate satisfaction with the supplier's performance or a lack of alternative suppliers in the market."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (18) matches claim."
+      },
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in this competitive process.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized requirement that only a few suppliers can meet, or timing issues that limited participation."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Awarded value is 9900% above the tender's own estimated value.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087",
+            "award:ocds-gyl66f-521027024-000087:14000"
+          ],
+          "confidence": 0.85,
+          "risk_level": "high",
+          "benign_explanation": "The price deviation may reflect unique specifications or urgent needs that justify a higher cost."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated award/tender deviation (9900%) matches claimed 9900%."
+      },
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in the bidding process.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized market where few suppliers are capable of meeting the specific requirements."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The awarded value is significantly above the tender's estimated value.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087",
+            "award:ocds-gyl66f-521027024-000087:14000"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The high awarded value may reflect urgent procurement needs or unique specifications that justify a premium."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "Fewer than 3 comparable tenders were found for peer price comparison.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-521027024-000087"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "The lack of comparable tenders may indicate a niche market or recent changes in procurement practices."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      }
+    ],
+    "conflicting_evidence": "None identified.",
+    "benign_explanations": "The limited participation may be due to a specialized market or unique requirements, while the high awarded value could reflect urgent needs or specialized equipment. The concentration of awards to one supplier may indicate a strong relationship or the supplier's unique capabilities.",
+    "confidence": 0.85,
+    "recommended_follow_up": "A detailed review of the procurement process, including the rationale for the awarded value and the reasons for limited supplier participation, is recommended to assess the integrity of the procurement.",
+    "source_record_refs": [
+      "award:ocds-gyl66f-521027024-000087:14000",
+      "buyer:NG-BPP-BPP-NOC-521027024",
+      "case:ocds-gyl66f-521027024-000087",
+      "supplier:NG-BPP-RC492239"
+    ],
+    "narrative": "The procurement process for the case indicates several risk indicators, including the participation of only one tenderer in the bidding process, which is unusual for National Competitive Bidding. Additionally, the awarded value significantly exceeds the tender's estimated value, suggesting a possible price deviation. Supplier concentration is also noted, with one supplier receiving a high percentage of total awards and multiple contracts from the buyer."
+  },
+  "llm_status": "ok"
+}

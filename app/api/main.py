@@ -2,19 +2,17 @@ import json
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from app.agents.providers import LLMNotConfiguredError
 from app.core.config import get_settings
 from app.data.db import get_connection
 from app.services.pipeline import investigate_and_report, load_cached_report
 
 app = FastAPI(title="Procurement Integrity Investigator")
-app.add_middleware(
-    CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
-)
+# The dashboard, API and static assets are all served from this one origin, so
+# no cross-origin access is needed. The public read-only prototype therefore
+# ships without a permissive CORS policy rather than with allow_origins=["*"].
 
 WEB_DIR = Path(__file__).resolve().parent.parent / "web"
 
@@ -240,6 +238,17 @@ def get_investigation(case_id: str):
 
 @app.post("/api/cases/{case_id}/investigate")
 async def run_investigation(case_id: str):
+    # Live AI investigation is intentionally unavailable on the public prototype:
+    # no LLM provider is configured, so this route must not run the pipeline (it
+    # would otherwise overwrite a bundled cached investigation with a
+    # deterministic-only stub). Cached investigations stay available via GET
+    # /api/cases/{case_id}/investigation.
+    if not get_settings().llm_configured:
+        raise HTTPException(
+            503,
+            "Live AI investigation is disabled on this public read-only prototype. "
+            "Open the recommended case to view its bundled cached investigation.",
+        )
     try:
         return await investigate_and_report(case_id)
     except ValueError as exc:

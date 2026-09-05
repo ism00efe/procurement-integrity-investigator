@@ -1,0 +1,513 @@
+{
+  "case": {
+    "case_id": "ocds-gyl66f-220007049-000106",
+    "buyer_id": "NG-BPP-BPP-NOC-220007049",
+    "buyer_name": "FEDERAL INLAND REVENUE SERVICE",
+    "tender_title": "PROVISION OF MICROSOFT LICENSES RENEWAL FOR FIRS STAFF IN NORTH WEST & EAST (LOT 3) FROM JULY 2019",
+    "tender_value_amount": 97037386.4,
+    "tender_value_currency": "NGN",
+    "procurement_method_details": "Direct Procurement",
+    "number_of_tenderers": 1,
+    "risk_score": 63.0,
+    "risk_level": "high",
+    "indicators": [
+      {
+        "id": "SINGLE_BIDDER",
+        "score": 20.0,
+        "explanation": "Only one tenderer participated in this competitive process.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ]
+      },
+      {
+        "id": "LOW_COMPETITION_METHOD",
+        "score": 18.0,
+        "explanation": "Procured via \"Direct Procurement\", a reduced-competition method.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ]
+      },
+      {
+        "id": "REPEATED_RELATIONSHIP",
+        "score": 15.0,
+        "explanation": "Buyer \"FEDERAL INLAND REVENUE SERVICE\" has awarded 12 separate contracts to supplier \"SHEBAG HOLDINGS LTD\" in this dataset.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-220007049",
+          "supplier:NG-BPP-BPP-CI-3393"
+        ]
+      },
+      {
+        "id": "SHORT_TENDER_PERIOD",
+        "score": 10.0,
+        "explanation": "Tender period was only 6 day(s), in the shortest 10% of all tenders in this dataset, limiting time for competitors to bid.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ]
+      }
+    ]
+  },
+  "investigator_outputs": [
+    {
+      "investigator": "Procurement / Procedure Analyst",
+      "case_id": "ocds-gyl66f-220007049-000106",
+      "summary": "The procurement case involved a direct procurement method with only one tenderer participating, raising potential procedural risk indicators. The tender period was notably short, which may have limited competition.",
+      "findings": [
+        {
+          "claim": "Only one tenderer participated in the bidding process, indicating low competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized market where few suppliers can meet the specific requirements."
+        },
+        {
+          "claim": "The procurement method used was 'Direct Procurement', which is a reduced-competition method.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "Direct procurement may be justified for repeat purchases or urgent needs."
+        },
+        {
+          "claim": "The tender period was only 6 days, which is in the shortest 10% of all tenders in the dataset, potentially limiting the opportunity for other bidders to participate.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "A short tender period may be necessary for urgent procurements or due to specific project timelines."
+        },
+        {
+          "claim": "The buyer has awarded multiple contracts to the same supplier, indicating a repeated relationship.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-220007049",
+            "supplier:NG-BPP-BPP-CI-3393"
+          ],
+          "confidence": 1.0,
+          "risk_level": "medium",
+          "benign_explanation": "Repeated contracts may reflect a long-standing relationship based on satisfactory past performance."
+        }
+      ]
+    },
+    {
+      "investigator": "Supplier / Relationship Analyst",
+      "case_id": "ocds-gyl66f-220007049-000106",
+      "summary": "The winning supplier, SHEBAG HOLDINGS LTD, has a concentrated history with the buyer, having received 12 awards, all from the same buyer, the Federal Inland Revenue Service. This pattern of repeated awards raises questions about supplier competition and market dynamics.",
+      "findings": [
+        {
+          "claim": "SHEBAG HOLDINGS LTD has received 12 separate contracts from the Federal Inland Revenue Service, indicating a concentrated supplier relationship.",
+          "evidence_refs": [
+            "supplier:NG-BPP-BPP-CI-3393",
+            "buyer:NG-BPP-BPP-NOC-220007049"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The concentration could be due to the supplier's specialization in Microsoft licenses, which may limit the pool of qualified vendors."
+        },
+        {
+          "claim": "The Federal Inland Revenue Service has a high single bidder share of 69.3%, indicating limited competition in its procurement processes.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-220007049"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "This may reflect a specialized market where few suppliers can meet specific technical requirements."
+        },
+        {
+          "claim": "The buyer has awarded contracts to SHEBAG HOLDINGS LTD for similar services, suggesting a potential preference or reliance on this supplier.",
+          "evidence_refs": [
+            "award:ocds-gyl66f-220007049-000103:10325",
+            "award:ocds-gyl66f-220007049-000106:10324",
+            "award:ocds-gyl66f-220007049-000107:10322",
+            "award:ocds-gyl66f-220007049-000114:10331",
+            "award:ocds-gyl66f-220007049-000135:10349",
+            "award:ocds-gyl66f-220007049-000131:10352",
+            "award:ocds-gyl66f-220007049-000138:10344",
+            "award:ocds-gyl66f-220007049-000095:10314",
+            "award:ocds-gyl66f-220007049-000824:10766",
+            "award:ocds-gyl66f-220007049-000837:10769",
+            "award:ocds-gyl66f-220007049-000838:10768",
+            "award:ocds-gyl66f-220007049-000839:10779"
+          ],
+          "confidence": 0.85,
+          "risk_level": "medium",
+          "benign_explanation": "The repeated awards could be due to the supplier's proven track record and reliability in delivering the required services."
+        }
+      ]
+    },
+    {
+      "investigator": "Price / Benchmark Analyst",
+      "case_id": "ocds-gyl66f-220007049-000106",
+      "summary": "The awarded value of the tender is approximately 9.5% higher than the median value of similar tenders, and only one bidder participated in the process, which raises potential concerns about competition and pricing.",
+      "findings": [
+        {
+          "claim": "The awarded value of 97,037,386.4 NGN is 9.5% higher than the peer median value of 88,580,788.06 NGN.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "The higher value could be justified by specific requirements or urgency related to the procurement of Microsoft licenses."
+        },
+        {
+          "claim": "Only one tenderer participated in this procurement process, which limits competitive pricing.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized market where few suppliers are capable of providing the required licenses."
+        },
+        {
+          "claim": "The procurement was conducted via Direct Procurement, a method associated with reduced competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 0.85,
+          "risk_level": "medium",
+          "benign_explanation": "Direct Procurement may have been chosen due to the urgency of the license renewal or the established relationship with the supplier."
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in the bidding process, indicating low competition.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ],
+        "confidence": 1.0,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to a specialized market where few suppliers can meet the specific requirements."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The procurement method used was 'Direct Procurement', which is a reduced-competition method.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ],
+        "confidence": 1.0,
+        "risk_level": "high",
+        "benign_explanation": "Direct procurement may be justified for repeat purchases or urgent needs."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The tender period was only 6 days, which is in the shortest 10% of all tenders in the dataset, potentially limiting the opportunity for other bidders to participate.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ],
+        "confidence": 1.0,
+        "risk_level": "high",
+        "benign_explanation": "A short tender period may be necessary for urgent procurements or due to specific project timelines."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The buyer has awarded multiple contracts to the same supplier, indicating a repeated relationship.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-220007049",
+          "supplier:NG-BPP-BPP-CI-3393"
+        ],
+        "confidence": 1.0,
+        "risk_level": "medium",
+        "benign_explanation": "Repeated contracts may reflect a long-standing relationship based on satisfactory past performance."
+      },
+      "investigator": "Procurement / Procedure Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "SHEBAG HOLDINGS LTD has received 12 separate contracts from the Federal Inland Revenue Service, indicating a concentrated supplier relationship.",
+        "evidence_refs": [
+          "supplier:NG-BPP-BPP-CI-3393",
+          "buyer:NG-BPP-BPP-NOC-220007049"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "The concentration could be due to the supplier's specialization in Microsoft licenses, which may limit the pool of qualified vendors."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated contract count (12) matches claim."
+    },
+    {
+      "finding": {
+        "claim": "The Federal Inland Revenue Service has a high single bidder share of 69.3%, indicating limited competition in its procurement processes.",
+        "evidence_refs": [
+          "buyer:NG-BPP-BPP-NOC-220007049"
+        ],
+        "confidence": 0.8,
+        "risk_level": "high",
+        "benign_explanation": "This may reflect a specialized market where few suppliers can meet specific technical requirements."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The buyer has awarded contracts to SHEBAG HOLDINGS LTD for similar services, suggesting a potential preference or reliance on this supplier.",
+        "evidence_refs": [
+          "award:ocds-gyl66f-220007049-000103:10325",
+          "award:ocds-gyl66f-220007049-000106:10324",
+          "award:ocds-gyl66f-220007049-000107:10322",
+          "award:ocds-gyl66f-220007049-000114:10331",
+          "award:ocds-gyl66f-220007049-000135:10349",
+          "award:ocds-gyl66f-220007049-000131:10352",
+          "award:ocds-gyl66f-220007049-000138:10344",
+          "award:ocds-gyl66f-220007049-000095:10314",
+          "award:ocds-gyl66f-220007049-000824:10766",
+          "award:ocds-gyl66f-220007049-000837:10769",
+          "award:ocds-gyl66f-220007049-000838:10768",
+          "award:ocds-gyl66f-220007049-000839:10779"
+        ],
+        "confidence": 0.85,
+        "risk_level": "medium",
+        "benign_explanation": "The repeated awards could be due to the supplier's proven track record and reliability in delivering the required services."
+      },
+      "investigator": "Supplier / Relationship Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The awarded value of 97,037,386.4 NGN is 9.5% higher than the peer median value of 88,580,788.06 NGN.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ],
+        "confidence": 0.8,
+        "risk_level": "medium",
+        "benign_explanation": "The higher value could be justified by specific requirements or urgency related to the procurement of Microsoft licenses."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "verified",
+      "verification_notes": "Recalculated award/tender deviation (0%) matches claimed 10%."
+    },
+    {
+      "finding": {
+        "claim": "Only one tenderer participated in this procurement process, which limits competitive pricing.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ],
+        "confidence": 0.9,
+        "risk_level": "high",
+        "benign_explanation": "This could be due to a specialized market where few suppliers are capable of providing the required licenses."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    },
+    {
+      "finding": {
+        "claim": "The procurement was conducted via Direct Procurement, a method associated with reduced competition.",
+        "evidence_refs": [
+          "case:ocds-gyl66f-220007049-000106"
+        ],
+        "confidence": 0.85,
+        "risk_level": "medium",
+        "benign_explanation": "Direct Procurement may have been chosen due to the urgency of the license renewal or the established relationship with the supplier."
+      },
+      "investigator": "Price / Benchmark Analyst",
+      "verification_status": "downgraded",
+      "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+    }
+  ],
+  "report": {
+    "case_id": "ocds-gyl66f-220007049-000106",
+    "overall_risk_level": "high",
+    "deterministic_risk_score": 63.0,
+    "key_findings": [
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in the bidding process, indicating low competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized market where few suppliers can meet the specific requirements."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The procurement method used was 'Direct Procurement', which is a reduced-competition method.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "Direct procurement may be justified for repeat purchases or urgent needs."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The tender period was only 6 days, which is in the shortest 10% of all tenders in the dataset, potentially limiting the opportunity for other bidders to participate.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 1.0,
+          "risk_level": "high",
+          "benign_explanation": "A short tender period may be necessary for urgent procurements or due to specific project timelines."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The buyer has awarded multiple contracts to the same supplier, indicating a repeated relationship.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-220007049",
+            "supplier:NG-BPP-BPP-CI-3393"
+          ],
+          "confidence": 1.0,
+          "risk_level": "medium",
+          "benign_explanation": "Repeated contracts may reflect a long-standing relationship based on satisfactory past performance."
+        },
+        "investigator": "Procurement / Procedure Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "SHEBAG HOLDINGS LTD has received 12 separate contracts from the Federal Inland Revenue Service, indicating a concentrated supplier relationship.",
+          "evidence_refs": [
+            "supplier:NG-BPP-BPP-CI-3393",
+            "buyer:NG-BPP-BPP-NOC-220007049"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "The concentration could be due to the supplier's specialization in Microsoft licenses, which may limit the pool of qualified vendors."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated contract count (12) matches claim."
+      },
+      {
+        "finding": {
+          "claim": "The Federal Inland Revenue Service has a high single bidder share of 69.3%, indicating limited competition in its procurement processes.",
+          "evidence_refs": [
+            "buyer:NG-BPP-BPP-NOC-220007049"
+          ],
+          "confidence": 0.8,
+          "risk_level": "high",
+          "benign_explanation": "This may reflect a specialized market where few suppliers can meet specific technical requirements."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The buyer has awarded contracts to SHEBAG HOLDINGS LTD for similar services, suggesting a potential preference or reliance on this supplier.",
+          "evidence_refs": [
+            "award:ocds-gyl66f-220007049-000103:10325",
+            "award:ocds-gyl66f-220007049-000106:10324",
+            "award:ocds-gyl66f-220007049-000107:10322",
+            "award:ocds-gyl66f-220007049-000114:10331",
+            "award:ocds-gyl66f-220007049-000135:10349",
+            "award:ocds-gyl66f-220007049-000131:10352",
+            "award:ocds-gyl66f-220007049-000138:10344",
+            "award:ocds-gyl66f-220007049-000095:10314",
+            "award:ocds-gyl66f-220007049-000824:10766",
+            "award:ocds-gyl66f-220007049-000837:10769",
+            "award:ocds-gyl66f-220007049-000838:10768",
+            "award:ocds-gyl66f-220007049-000839:10779"
+          ],
+          "confidence": 0.85,
+          "risk_level": "medium",
+          "benign_explanation": "The repeated awards could be due to the supplier's proven track record and reliability in delivering the required services."
+        },
+        "investigator": "Supplier / Relationship Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The awarded value of 97,037,386.4 NGN is 9.5% higher than the peer median value of 88,580,788.06 NGN.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 0.8,
+          "risk_level": "medium",
+          "benign_explanation": "The higher value could be justified by specific requirements or urgency related to the procurement of Microsoft licenses."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "verified",
+        "verification_notes": "Recalculated award/tender deviation (0%) matches claimed 10%."
+      },
+      {
+        "finding": {
+          "claim": "Only one tenderer participated in this procurement process, which limits competitive pricing.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 0.9,
+          "risk_level": "high",
+          "benign_explanation": "This could be due to a specialized market where few suppliers are capable of providing the required licenses."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      },
+      {
+        "finding": {
+          "claim": "The procurement was conducted via Direct Procurement, a method associated with reduced competition.",
+          "evidence_refs": [
+            "case:ocds-gyl66f-220007049-000106"
+          ],
+          "confidence": 0.85,
+          "risk_level": "medium",
+          "benign_explanation": "Direct Procurement may have been chosen due to the urgency of the license renewal or the established relationship with the supplier."
+        },
+        "investigator": "Price / Benchmark Analyst",
+        "verification_status": "downgraded",
+        "verification_notes": "States no recomputable number, so the claim itself was never independently checked \u2014 only that the records it cites are real."
+      }
+    ],
+    "conflicting_evidence": "None identified.",
+    "benign_explanations": "The low competition may be due to a specialized market, while the higher awarded value could be justified by specific requirements related to the procurement of Microsoft licenses.",
+    "confidence": 0.8,
+    "recommended_follow_up": "A detailed review of the procurement process and the justification for the chosen procurement method is recommended, along with an assessment of the supplier's performance history.",
+    "source_record_refs": [
+      "award:ocds-gyl66f-220007049-000095:10314",
+      "award:ocds-gyl66f-220007049-000103:10325",
+      "award:ocds-gyl66f-220007049-000106:10324",
+      "award:ocds-gyl66f-220007049-000107:10322",
+      "award:ocds-gyl66f-220007049-000114:10331",
+      "award:ocds-gyl66f-220007049-000131:10352",
+      "award:ocds-gyl66f-220007049-000135:10349",
+      "award:ocds-gyl66f-220007049-000138:10344",
+      "award:ocds-gyl66f-220007049-000824:10766",
+      "award:ocds-gyl66f-220007049-000837:10769",
+      "award:ocds-gyl66f-220007049-000838:10768",
+      "award:ocds-gyl66f-220007049-000839:10779",
+      "buyer:NG-BPP-BPP-NOC-220007049",
+      "case:ocds-gyl66f-220007049-000106",
+      "supplier:NG-BPP-BPP-CI-3393"
+    ],
+    "narrative": "The procurement case exhibits several risk indicators, including low competition with only one tenderer participating and the use of direct procurement, which is associated with reduced competition. Additionally, SHEBAG HOLDINGS LTD has received multiple contracts from the Federal Inland Revenue Service, suggesting a concentrated supplier relationship. The awarded value is notably higher than the peer median, which may warrant further examination."
+  },
+  "llm_status": "ok"
+}
